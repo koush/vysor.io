@@ -435,7 +435,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
       <script>
         $(document).ready(function() {
           if (window.location.toString().indexOf('redirect') != -1) {
-            window.location = window.location.toString().replace('/redirect/', '/view/');
+            setTimeout(function() {
+              window.location = window.location.toString().replace('/redirect/', '/view/');
+            }, 1000)
           }
           else {
             // setTimeout(function() {
