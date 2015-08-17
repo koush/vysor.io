@@ -435,16 +435,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
       <script>
         $(document).ready(function() {
           if (window.location.toString().indexOf('redirect') != -1) {
+            // after a second, redirect to trigger vysor
             setTimeout(function() {
               window.location = window.location.toString().replace('/redirect/', '/view/');
+
+              // still here? vysor is installed!
+              setTimeout(function() {
+                $('.actions').hide();
+                $('.instructions').text('Connecting to a shared Android device.');
+                $('.instructions2').text('Vysor will open automatically.');
+              }, 1000);
             }, 1000)
-          }
-          else {
-            setTimeout(function() {
-              $('.actions').hide();
-              $('.instructions').text('Connecting to a shared Android device.');
-              $('.instructions2').text('Vysor will open automatically.');
-            }, 1000);
           }
         })
       </script>
