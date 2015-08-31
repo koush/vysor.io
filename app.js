@@ -17,6 +17,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/share', express.static(path.join(__dirname, 'public/share')));
+app.use('/share', express.static(path.join(__dirname, 'public')));
 app.use('/redirect/:registrationId/:secret', express.static(path.join(__dirname, 'public/view')));
 app.use('/view/:registrationId/:secret', express.static(path.join(__dirname, 'public/view')));
 app.use('/redirect/:registrationId/:secret', express.static(path.join(__dirname, 'public')));
