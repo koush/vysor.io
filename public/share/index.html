@@ -441,6 +441,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
           $('#vysor-link').click(function() {
             this.setSelectionRange(0, this.value.length);
           })
+          $('#vysor-link').focus(function() {
+            this.setSelectionRange(0, this.value.length);
+          })
+          $('#vysor-link').focus()
         })
       </script>
 	</body>
