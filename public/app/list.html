@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vysor</title>
+    <script src='common/jquery-2.1.1.min.js'></script>
+    <link href='font/font.css' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <script src='list.js'></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand" id='vysor-title'>Vysor Beta</h3>
+              <ul class="nav masthead-nav">
+                <!-- <li class="active"><a href="#" id='toggle-server'>Kill Server</a></li> -->
+                <!-- <li class="active"><a href="#" id='connect-android'>Select Android USB</a></li> -->
+                <!-- <li class="active"><a href="#" id='refresh-devices'>Refresh Devices</a></li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div id='devices-header' class="cover">
+            <!--<h1 class="cover-heading">Connected Devices</h1>-->
+            <div id='devices-list'>
+              <div id='choose-header' class='list-header'>Choose a device</div>
+              <ul  id='devices' class="nav devices-nav">
+              </ul>
+            </div>
+            <p class="lead" id='find'>
+            <a href="#" class="btn btn-lg btn-default" id='connect-android'>Find Devices</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <div id='connect-automatically'>
+                <label class="checkbox-label"><input type="checkbox" name="connect-automatically" value="1" id='connect-automatically-check'/> Start automatically</label>
+              </div>
+              <p id='not-found'>Android not found? Make sure <a href='https://www.youtube.com/watch?v=Ucs34BkfPB0&feature=youtu.be' target='_blank'>Android USB Debugging is enabled</a>.</p>
+              <p id='windows'>Windows users need <a href='http://koush.com/post/universal-adb-driver' target='_blank'>ADB Drivers</a>.</p>
+              <p id='adb-server-status'></p>
+              <p><a href="https://plus.google.com/110558071969009568835/posts/1uS4nfW7xhp" target='_blank'>Troubleshooting and Support.</a> <a id='reload-vysor' href='#'>Reload Vysor.</a></p>
+              <p>Created by <a href="http://twitter.com/koush" target='_blank'>@koush</a>. Version <span id='vysor-version'></span>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="common/jquery-2.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="common/list.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{
+  "name": "Vysor (Beta)",
+  "description": "A window to your Android",
+  "version": "1.0.6.5",
+  "minimum_chrome_version": "42",
+  "sockets": {
+    "tcp": {
+      "connect": "*"
+    },
+    "tcpServer": {
+      "listen": "*"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "optional_permissions": [
+    "clipboardWrite"
+  ],
+  "url_handlers": {
+    "vysor_presentation": {
+      "matches": [
+        "https://vysor.clockworkmod.com/view/*"
+      ],
+      "title": "Vysor Share"
+    }
+  },
+  "app": {
+    "background": {
+      "persistent": true,
+      "scripts": [
+        "common/jquery-2.1.1.min.js",
+        "common/jsencrypt.js",
+        "common/google-analytics-bundle.js",
+        "uglify.js"
+      ]
+    }
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "nativeMessaging",
+    "browser",
+    "gcm",
+    "notifications",
+    "https://gcm-http.googleapis.com/",
+    "https://www.google-analytics.com/",
+    {
+      "fileSystem": [
+        "write",
+        "retainEntries",
+        "directory"
+      ]
+    },
+    "storage",
+    "system.network",
+    "usb"
+  ]
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='font/font.css' rel='stylesheet' type='text/css'>
+    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="loader.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #000;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      canvas {
+        position: absolute;
+        padding: 0;
+        margin: 0;
+      }
+      .overlay {
+        position: absolute;
+        background-color: black;
+        opacity: .75;
+        display: none;
+      }
+      
+      .overlay img {
+        background-color: black;
+        width: 100%;
+        display: block;
+        margin: auto;
+        margin-top: 100px;
+      }
+      
+      .head {
+        color: white;
+        background-color: #468fcc;
+        position: absolute;
+        top: 0;
+        height: 36px;
+        z-index: 99;
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+      }
+      
+      .title {
+        padding-left: 24px;
+        padding-right: 24px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      
+      .topbuttonbar {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .topbuttonbar .btn-toolbar {
+        float: right;
+      }
+      
+      #settings {
+        text-align: center;
+      }
+      
+      .foot {
+        display: table;
+        background-color: #468fcc;
+        position: absolute;
+        bottom: 0;
+        height: 48px;
+        z-index: 99;
+        width: 100%;
+      }
+      
+      .foot span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        color: white;
+        width: 33%;
+      }
+
+      .foot-row {
+        display: table-row;
+      }
+
+      .foot span:hover,
+      .foot span:focus {
+        background-color: #326793;
+      }
+
+      .foot span:active {
+        background-color: #84A4BE;
+      }
+    </style>
+    <script src='https://vysor-1026.appspot.com/_ah/channel/jsapi'></script>
+    <script src='common/jquery-2.1.1.min.js'></script>
+    <script src='util.js'></script>
+    <script src='socket.js'></script>
+    <script src='fetch.js'></script>
+    <script src='gcmsocket.js'></script>
+
+    <script src='h264/WebGLCanvas.js'></script>
+    <script src='h264/avc-codec.js'></script>
+    <script src='h264/avc.js'></script>
+
+    <script src='screen.js'></script>
+    <!-- dirty hack -->
+    <script src='uglify-screen.js'></script>
+  </head>
+
+  <body>
+    <div class='head'>
+      <span class='title' style='white-space: nowrap;'>
+        <span>Vysor</span>
+        <span>&nbsp;-&nbsp;</span>
+        <span id='serialno'></span>
+      </span>
+      <span class='topbuttonbar'>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group btn-group-xs" role="group" aria-label="First group">
+            <button id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></button>
+            <button id='screenshot-button' type="button" class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></button>
+          </div>
+          <div class="btn-group btn-group-xs" role="group" aria-label="First group">
+            <button id='volume-down' type="button" class="btn btn-default" title="Volume Down"><span class='fa fa-volume-down'></span></button>
+            <button id='volume-up' type="button" class="btn btn-default" title="Volume Up"><span class='fa fa-volume-up'></span></button>
+          </div>
+          <div class="btn-group btn-group-xs" role="group" aria-label="First group">
+            <button id='rotate-button' type="button" class="btn btn-default" title="Rotate"><span class='fa fa-repeat'></span></button>
+            <button id='power' type="button" class="btn btn-default" title="Power"><span class='fa fa-power-off'></span></button>
+          </div>
+        </div>
+      </span>        
+    </div>
+
+    <canvas id='mirror'></canvas>
+    <div class='overlay' id='dead'>
+      <img src='dead-mac.png'>
+    </div>
+    <div class='overlay' id='loading' style='display: block; width: 100%; height: 100%;'>
+      <div style='margin-top: 48px; color: #fff;'><center id='loading-text'>Connecting...</center></div>
+      <div class='loader'></div>
+    </div>
+    <div class='foot'>
+      <div class='foot-row'>
+        <span id='bottom-back' class='fa fa-lg fa-chevron-left'></span>
+        <span id='bottom-home' class='fa fa-lg fa-circle-o'></span>
+        <span id='bottom-tasks' class='fa fa-lg fa-navicon'></span>
+      </div>
+    </div>
+  </body>
+</html>
