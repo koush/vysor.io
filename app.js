@@ -23,7 +23,8 @@ app.use('/redirect/:registrationId/:secret', express.static(path.join(__dirname,
 app.use('/view/:registrationId/:secret', express.static(path.join(__dirname, 'public/view')));
 app.use('/redirect/:registrationId/:secret', express.static(path.join(__dirname, 'public')));
 app.use('/view/:registrationId/:secret', express.static(path.join(__dirname, 'public')));
-app.use('/app/screen', express.static(path.join(__dirname, 'public/app/screen.html')));
+app.use('/app/vysor', express.static(path.join(__dirname, 'public/app/screen.html')));
+app.use('/app/browser', express.static(path.join(__dirname, 'public/app/screen.html')));
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 //

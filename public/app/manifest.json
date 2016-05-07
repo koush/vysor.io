@@ -22,7 +22,8 @@
   "url_handlers": {
     "vysor_presentation": {
       "matches": [
-        "https://vysor.clockworkmod.com/view/*"
+        "https://vysor.clockworkmod.com/view/*",
+        "https://vysor.clockworkmod.com/app/vysor*"
       ],
       "title": "Vysor Share"
     }
