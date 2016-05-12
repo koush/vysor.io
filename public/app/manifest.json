@@ -1,7 +1,7 @@
 {
   "name": "Vysor (Beta)",
   "description": "A window to your Android",
-  "version": "1.0.6.6",
+  "version": "1.0.6.7",
   "minimum_chrome_version": "42",
   "sockets": {
     "tcp": {
@@ -41,6 +41,7 @@
   },
   "manifest_version": 2,
   "permissions": [
+    "app.window.fullscreen",
     "nativeMessaging",
     "browser",
     "gcm",
