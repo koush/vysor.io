@@ -1,1 +1,9 @@
 .DS_Store
+public/app/video_decode/pnacl/Release/video_decode.deps
+public/app/video_decode/pnacl/Release/video_decode.o
+public/app/video_decode/pnacl/Release/video_decode_unstripped.*
+public/app/video_decode/video_decode.cc
+public/app/video_decode/Makefile
+public/app/video_decode/pnacl/Release/dir.stamp
+h264
+public/app/Vysor-release.apk

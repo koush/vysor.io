@@ -43,6 +43,15 @@ $(document).ready(function() {
   $('#reload-vysor').click(function() {
     chrome.runtime.reload();
   })
+  
+  chrome.storage.local.get(['vysorUsage'], function(d) {
+    // send analytics
+    var hoursUsed = d.vysorUsage / (60 * 60 * 1000);
+    // half hour
+    hoursUsed = Math.round(hoursUsed * 2) / 2;
+    $('#used').html(' ' + hoursUsed + " free hours. Support Vysor. Go Pro.")
+  });
+  
 });
 
 

@@ -1,0 +1,125 @@
+<html>
+	<head>
+		<title>Vysor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href='font/font.css' rel='stylesheet' type='text/css'>
+    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src='common/buy.js'></script>
+    <script src='common/jquery-2.1.1.min.js'></script>
+    <script src='purchase.js'></script>
+    <style>
+    .blue-icon {
+      color: #4A98E5;
+    }
+    .green-icon {
+      color: #34C109;
+    }
+    .table-column-striped tbody tr:nth-child(2n + 1) {
+        background-color: transparent;
+    }
+    .table-column-striped tbody td:nth-child(3) {
+        background-color: rgba(144, 144, 144, 0.075);
+    }
+    .table-column-striped tbody th:nth-child(3) {
+        background-color: rgba(144, 144, 144, 0.075);
+    }
+    .table-column-striped tbody td:nth-child(2), table tbody td:nth-child(3), table thead tr th:nth-child(2), table thead tr th:nth-child(3) {
+      text-align: center;
+    }
+    body {
+      padding: 16px;
+    }
+    .time-highlight {
+      color: red;
+    }
+    </style>
+  </head>
+  <body>
+				<header class="major">
+					<h2>Upgrade Vysor</h2>
+          <h4 id='used'></h4>
+				</header>
+		<section id="pricing" class="wrapper">
+			<div class="inner">
+        <section>
+          <div class="table-wrapper">
+            <table class="table table-column-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th width='30%'>Vysor</th>
+                  <th width='30%'>Vysor Pro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mirror and Control Android</td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+                <tr>
+                  <td>Screenshots</td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+                <tr>
+                  <td>High Quality Mirroring</td>
+                  <td></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+                <tr>
+                  <td>Fullscreen Mode</td>
+                  <td></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+                <tr>
+                  <td>Vysor Share</td>
+                  <td></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+                <tr>
+                  <td>Drag and Drop Files</td>
+                  <td></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+                <tr>
+                  <td>Access to <b>all</b> future features</td>
+                  <td></td>
+                  <td><span class="blue-icon fa fa-check"></span></td>
+                </tr>
+              </tbody>
+              <!-- <tfoot>
+                <tr>
+                  <td colspan="3" style='text-align: right;'>$1.99/mo or $9.99/yr</td>
+                </tr>
+              </tfoot> -->
+            </table>
+          </div>
+        </section> 
+      </div>
+    </section>
+    
+    
+    <section class='wrapper'>
+      <div class='inner'>
+        <section>
+          <div class='table-wrapper'>
+            <table class="table table-column-striped">
+              <thead>
+                <tr>
+                  <th>Vysor Pro</th>
+                  <th width='30%'>Price</th>
+                  <th width='30%'></th>
+                </tr>
+              </thead>
+              <tbody id='prices'>
+              </tbody>
+            
+          </div>
+      </div>
+      
+    </section>
+  </body>
+</html>

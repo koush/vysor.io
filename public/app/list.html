@@ -53,8 +53,26 @@
 
           <div class="mastfoot">
             <div class="inner">
+              <div id='purchase' style='margin-bottom: 40px'>
+                <center>
+                <span><span class='glyphicon glyphicon-shopping-cart' style='color: #34C109;'></span><a id='used'>Support Vysor. Go Pro.</a></span>
+                </center>
+              </div>
               <div id='connect-automatically'>
                 <label class="checkbox-label"><input type="checkbox" name="connect-automatically" value="1" id='connect-automatically-check'/> Start automatically</label>
+              </div>
+
+              <div>
+                <label>
+                  Image Quality
+                  <select class="form-control" style='width: 300px; display: inline;' id='bitrate'>
+                    <option>500Kbps (fast, low quality)</option>
+                    <option>750Kbps</option>
+                    <option>1Mbit</option>
+                    <option>1.5Mbit</option>
+                    <option>2Mbit (slow, high quality)</option>
+                  </select> 
+                </label>     
               </div>
               <p id='not-found'>Android not found? Make sure <a href='https://www.youtube.com/watch?v=Ucs34BkfPB0&feature=youtu.be' target='_blank'>Android USB Debugging is enabled</a>.</p>
               <p id='windows'>Windows users need <a href='http://koush.com/post/universal-adb-driver' target='_blank'>ADB Drivers</a>.</p>

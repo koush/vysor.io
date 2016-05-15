@@ -1,8 +1,9 @@
 {
-  "name": "Vysor (Beta)",
+  "name": "Vysor",
+  "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.0.6.8",
-  "minimum_chrome_version": "42",
+  "version": "1.0.7.0",
+  "minimum_chrome_version": "48",
   "sockets": {
     "tcp": {
       "connect": "*"
@@ -28,6 +29,13 @@
       "title": "Vysor Share"
     }
   },
+  "requirements": {
+    "3D": {
+      "features": [
+        "webgl"
+      ]
+    }
+  },
   "app": {
     "background": {
       "persistent": true,
@@ -35,6 +43,7 @@
         "common/jquery-2.1.1.min.js",
         "common/jsencrypt.js",
         "common/google-analytics-bundle.js",
+        "common/buy.js",
         "uglify.js"
       ]
     }
