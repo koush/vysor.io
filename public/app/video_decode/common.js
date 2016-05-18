@@ -120,7 +120,7 @@ var common = (function() {
    * @param {number} height The height to create the plugin.
    * @param {Object} attrs Dictionary of attributes to set on the module.
    */
-  function createNaClModule(name, tool, path, width, height, attrs, messageHandler) {
+  function createNaClModule(name, tool, path, width, height, attrs, messageHandler, loadedHandler) {
     var moduleEl = document.createElement('embed');
     moduleEl.setAttribute('name', 'nacl_module');
     moduleEl.setAttribute('id', 'nacl_module');
@@ -128,6 +128,9 @@ var common = (function() {
     moduleEl.setAttribute('height', height);
     moduleEl.setAttribute('path', path);
     moduleEl.setAttribute('src', path + '/' + name + '.nmf');
+
+    moduleEl.loadedHandler = loadedHandler;
+
 
     // Add any optional arguments
     if (attrs) {
@@ -234,6 +237,8 @@ var common = (function() {
    */
   function moduleDidLoad() {
     common.naclModule = document.getElementById('nacl_module');
+    if (common.naclModule.loadedHandler)
+      common.naclModule.loadedHandler();
     updateStatus('RUNNING');
 
     if (typeof window.moduleDidLoad !== 'undefined') {

@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.0.7.0",
+  "version": "1.0.7.2",
   "minimum_chrome_version": "48",
   "sockets": {
     "tcp": {
@@ -48,13 +48,22 @@
       ]
     }
   },
+  "oauth2": {
+    "client_id": "64148182473-mmrruv55po0sjb7ghlnmhgkkuk2u8eou.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/chromewebstore.readonly"
+    ]
+  },
   "manifest_version": 2,
   "permissions": [
+    "identity",
     "app.window.fullscreen",
     "nativeMessaging",
     "browser",
     "gcm",
     "notifications",
+    "https://www.googleapis.com/",
     "https://gcm-http.googleapis.com/",
     "https://www.google-analytics.com/",
     {

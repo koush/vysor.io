@@ -38,6 +38,8 @@ function selectDevices() {
 }
 
 $(document).ready(function() {
+  $('#logging-in').hide();
+  $('#login-container').hide();
   $('#connect-android').click(selectDevices);
   $('#vysor-version').text(chrome.runtime.getManifest().version)
   $('#reload-vysor').click(function() {
@@ -45,13 +47,14 @@ $(document).ready(function() {
   })
   
   chrome.storage.local.get(['vysorUsage'], function(d) {
-    // send analytics
-    var hoursUsed = d.vysorUsage / (60 * 60 * 1000);
+    var vysorUsage = d.vysorUsage;
+    if (!vysorUsage)
+      vysorUsage = 0;
+    var hoursUsed = vysorUsage / (60 * 60 * 1000);
     // half hour
     hoursUsed = Math.round(hoursUsed * 2) / 2;
     $('#used').html(' ' + hoursUsed + " free hours. Support Vysor. Go Pro.")
   });
-  
 });
 
 

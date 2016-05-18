@@ -1,7 +1,10 @@
 $(document).ready(function() {
+  $('#purchase-options').hide();
   chrome.storage.local.get(['vysorUsage'], function(d) {
-    // send analytics
-    var hoursUsed = d.vysorUsage / (60 * 60 * 1000);
+    var vysorUsage = d.vysorUsage;
+    if (!vysorUsage)
+      vysorUsage = 0;
+    var hoursUsed = vysorUsage / (60 * 60 * 1000);
     // half hour
     hoursUsed = Math.round(hoursUsed * 2) / 2;
     $('#used').html("<span class='time-highlight'>" + hoursUsed + " hours of free usage.</span>")
@@ -32,10 +35,14 @@ $(document).ready(function() {
       })
       $('#prices').append(ele);
     });
+    
+    $('#purchase-options-loading h4').hide();
+    $('#purchase-options').show();
   }
 
   function onSkuDetailsFail() {
     console.log(arguments);
+    $('#purchase-options-loading h4').html('Chrome Web Store unavailable.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and are <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payemnts</a>.')
   }
 
   google.payments.inapp.getSkuDetails({
