@@ -42,7 +42,7 @@ $(document).ready(function() {
 
   function onSkuDetailsFail() {
     console.log(arguments);
-    $('#purchase-options-loading h4').html('Chrome Web Store unavailable.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and are <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payemnts</a>.')
+    $('#purchase-options-loading h4').html('Chrome Web Store unavailable.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payemnts</a>.')
   }
 
   google.payments.inapp.getSkuDetails({

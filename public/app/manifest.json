@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.0.7.5",
+  "version": "1.0.7.6",
   "minimum_chrome_version": "48",
   "sockets": {
     "tcp": {
@@ -27,6 +27,12 @@
         "https://vysor.clockworkmod.com/app/vysor*"
       ],
       "title": "Vysor Share"
+    },
+    "vysor_device_farm": {
+      "matches": [
+        "https://vysor.clockworkmod.com/server/*"
+      ],
+      "title": "Vysor Device Farm"
     }
   },
   "requirements": {
@@ -38,7 +44,6 @@
   },
   "app": {
     "background": {
-      "persistent": true,
       "scripts": [
         "common/jquery-2.1.1.min.js",
         "common/jsencrypt.js",

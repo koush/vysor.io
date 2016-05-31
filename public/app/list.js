@@ -46,15 +46,25 @@ $(document).ready(function() {
     chrome.runtime.reload();
   })
   
-  chrome.storage.local.get(['vysorUsage'], function(d) {
-    var vysorUsage = d.vysorUsage;
-    if (!vysorUsage)
-      vysorUsage = 0;
-    var hoursUsed = vysorUsage / (60 * 60 * 1000);
-    // half hour
-    hoursUsed = Math.round(hoursUsed * 2) / 2;
-    $('#used').html(' ' + hoursUsed + " free hours. Support Vysor. Go Pro.")
-  });
+  function checkUsage() {
+    chrome.storage.local.get(['vysorUsage'], function(d) {
+      var vysorUsage = d.vysorUsage;
+      if (!vysorUsage)
+        vysorUsage = 0;
+      var hoursUsed = vysorUsage / (60 * 60 * 1000);
+      // half hour
+      hoursUsed = Math.round(hoursUsed * 2) / 2;
+      console.log('hours used', hoursUsed);
+      if (hoursUsed < 3)
+        $('#purchase').hide();
+      else
+        $('#used').html("You've used Vysor for " + hoursUsed + " hours. Support Vysor. Go Pro.")
+    });
+    
+    setTimeout(checkUsage, 60 * 60 * 1000)
+  }
+  
+  checkUsage();
 });
 
 

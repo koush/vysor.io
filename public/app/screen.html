@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Vysor</title>
     <link href='font/font.css' rel='stylesheet' type='text/css'>
     <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -119,6 +121,7 @@
     <script src='fetch.js'></script>
     <script src='filesocket.js'></script>
     <script src='gcmsocket.js'></script>
+    <script src='adb-client.js'></script>
 
     <!-- deprecated -->
     <!--
@@ -143,34 +146,34 @@
         <span id='serialno'></span>
       </span>
       <span class='topbuttonbar'>
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div class="btn-group btn-group-xs" role="group" aria-label="First group">
+        <span class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <span class="btn-group btn-group-xs" role="group" aria-label="First group">
             <button id='fullscreen-button' type="button" class="btn btn-default" title="Full Screen"><span class='fa fa-arrows-alt'></span></button>
             <button id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></button>
             <button id='screenshot-button' type="button" class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></button>
-          </div>
-          <div class="btn-group btn-group-xs" role="group" aria-label="First group">
+          </span>
+          <span class="btn-group btn-group-xs" role="group" aria-label="First group">
             <button id='volume-down' type="button" class="btn btn-default" title="Volume Down"><span class='fa fa-volume-down'></span></button>
             <button id='volume-up' type="button" class="btn btn-default" title="Volume Up"><span class='fa fa-volume-up'></span></button>
-          </div>
-          <div class="btn-group btn-group-xs" role="group" aria-label="First group">
+          </span>
+          <span class="btn-group btn-group-xs" role="group" aria-label="First group">
             <button id='rotate-button' type="button" class="btn btn-default" title="Rotate"><span class='fa fa-repeat'></span></button>
             <button id='power' type="button" class="btn btn-default" title="Power"><span class='fa fa-power-off'></span></button>
-          </div>
-        </div>
+          </span>
+        </span>
       </span>        
     </div>
 
     <canvas id='mirror'></canvas>
     <div id='listener'></div>
     <div class='overlay' id='dead'>
-      <img src='dead-mac.png'>
+      <img src='dead-mac.png' alt='dead'>
     </div>
     <div class='overlay' id='drag'>
         <span class='fa fa-5x fa-upload'></span>
     </div>
     <div class='overlay' id='loading' style='display: block; width: 100%; height: 100%;'>
-      <div style='margin-top: 48px; color: #fff;'><center id='loading-text'>Connecting...</center></div>
+      <div style='margin-top: 48px; color: #fff; text-align: center;'>Connecting...</div>
       <div class='loader'></div>
     </div>
     <div class='foot'>
