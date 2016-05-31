@@ -30,7 +30,7 @@
     },
     "vysor_device_farm": {
       "matches": [
-        "https://vysor.clockworkmod.com/server/*"
+        "https://vysor.clockworkmod.com/redirects/*"
       ],
       "title": "Vysor Device Farm"
     }
