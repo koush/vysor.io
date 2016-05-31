@@ -55,10 +55,7 @@ $(document).ready(function() {
       // half hour
       hoursUsed = Math.round(hoursUsed * 2) / 2;
       console.log('hours used', hoursUsed);
-      if (hoursUsed < 3)
-        $('#purchase').hide();
-      else
-        $('#used').html("You've used Vysor for " + hoursUsed + " hours. Support Vysor. Go Pro.")
+      $('#used').html("You've used Vysor for " + hoursUsed + " hours. Support Vysor. Go Pro.")
     });
     
     setTimeout(checkUsage, 60 * 60 * 1000)

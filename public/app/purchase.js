@@ -7,7 +7,7 @@ $(document).ready(function() {
     var hoursUsed = vysorUsage / (60 * 60 * 1000);
     // half hour
     hoursUsed = Math.round(hoursUsed * 2) / 2;
-    $('#used').html("<span class='time-highlight'>" + hoursUsed + " hours of free usage.</span>")
+    $('#used').html("<span class='time-highlight'>You've used Vysor for " + hoursUsed + " hours. Support Vysor. Go Pro.</span>")
   });
 
   function onSkuDetails(response) {

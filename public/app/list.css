@@ -26,4 +26,15 @@ body {
 
 .btn-success {
   margin-right: 4px;
+  margin-left: 4px;
+}
+
+html, body {
+    overflow-y: visible;
+}
+
+.avatar {
+  float: right;
+  width: 32px;
+  height: 32px;
 }
