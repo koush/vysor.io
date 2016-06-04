@@ -41,7 +41,7 @@ $(document).ready(function() {
   $('#logging-in').hide();
   $('#login-container').hide();
   $('#connect-android').click(selectDevices);
-  $('#vysor-version').text(chrome.runtime.getManifest().version)
+  $('#vysor-version').text('Vysor Version ' + chrome.runtime.getManifest().version)
   $('#reload-vysor').click(function() {
     chrome.runtime.reload();
   })
