@@ -20,13 +20,8 @@
 			<header id="header">
 				<div class="content">
 					<h1><a href="#">Vysor</a></h1>
-					<p>A window to your Android</p>
-					<h5 class='instructions'>Thanks for your purchase.</h5>
-					<h5 class='instructions2'>Vysor will open automatically to retrieve your license.</h5>
-					<ul class="actions">
-						<li><a href="https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1" class="button special icon fa-download">Download Vysor</a></li>
-            <!-- <li><a href="#one" class="button icon fa-chevron-down scrolly">Learn More</a></li> -->
-					</ul>
+					<p class='instructions'>Thanks for your purchase.</p>
+					<h5 class='instructions2'>Please open Vysor's purchase screen to automatically retrieve your licence.</h5>
 				</div>
 				<div class="image phone"><div class="inner"><img src="images/screen.png" alt="" /></div></div>
 			</header>
@@ -51,16 +46,15 @@
     
       <script>
         $(document).ready(function() {
-          if (window.location.toString().indexOf('purchase-complete') != -1) {
+          if (window.location.toString().indexOf('purchase-complete') == -1) {
             // after a second, redirect to trigger vysor
             setTimeout(function() {
-              window.location = window.location.toString().replace('/purchase-complete/');
+              window.location = window.location.toString().replace('/purchase/', '/purchase-complete/');
 
               // still here? vysor is installed!
               setTimeout(function() {
                 $('.actions').hide();
-                $('.instructions').text('Thanks for your purchase.');
-                $('.instructions2').text("Please open Vysor's purchase screen to retrieve your licence automatically.");
+                $('.instructions2').text("Vysor will open automatically to retrieve your license.");
               }, 1000);
             }, 1000)
           }
