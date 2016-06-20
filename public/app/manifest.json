@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.0.8.8",
+  "version": "1.0.9.1",
   "minimum_chrome_version": "48",
   "sockets": {
     "tcp": {
@@ -21,6 +21,12 @@
     "clipboardWrite"
   ],
   "url_handlers": {
+    "vysor_purchase": {
+      "matches": [
+        "https://vysor.clockworkmod.com/purchase-complete*"
+      ],
+      "title": "Vysor Purchase"
+    },
     "vysor_presentation": {
       "matches": [
         "https://vysor.clockworkmod.com/view/*",

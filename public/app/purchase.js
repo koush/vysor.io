@@ -16,7 +16,7 @@ $(document).ready(function() {
       var name = product.localeData[0].title;
       var price = product.prices[0];
       var priceText = (price.valueMicros / 1000000) + ' ' + price.currencyCode;
-      var ele = $('<tr><td id="sub"></td><td id="price"></td><td><a id="purchase" class="green-icon fa fa-shopping-cart"> Buy</a></td></tr>');
+      var ele = $('<tr><td id="sub"></td><td id="price"></td><td><a id="purchase" class="green-icon fa fa-shopping-cart"> Google Wallet</a></td></tr>');
       ele.find('#sub').text(name)
       ele.find('#price').text(priceText);
       ele.find('#purchase').click(function() {
@@ -36,13 +36,37 @@ $(document).ready(function() {
       $('#prices').append(ele);
     });
     
+    var ele = $('<tr><td id="sub"></td><td id="price"></td><td></td></tr>');
+    $('#prices').append(ele);
+    addPaypal();
     $('#purchase-options-loading h4').hide();
     $('#purchase-options').show();
+  }
+  
+  function addPaypal() {
+    
+    var ele = $('<tr><td id="sub"></td><td id="price"></td><td><a id="purchase" class="green-icon fa fa-shopping-cart"> PayPal</a></td></tr>');
+    ele.find('#sub').text('Lifetime Pass')
+    ele.find('#price').text('39.99 USD');
+    ele.find('#purchase').click(function() {
+      chrome.identity.getAuthToken({
+        interactive: true,
+        scopes: ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
+      }, function(token) {
+        var url = 'https://clockworkbilling.appspot.com/api/v1/paypalorder/koushd@gmail.com/vysor.lifetime?return_url=https://vysor.clockworkmod.com/purchase&sandbox=false&token=' + token;
+        chrome.browser.openTab({url: url});
+        chrome.app.window.current().close();        
+      }.bind(this));
+    })
+    $('#prices').append(ele);
   }
 
   function onSkuDetailsFail() {
     console.log(arguments);
-    $('#purchase-options-loading h4').html('Chrome Web Store unavailable.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payemnts</a>.')
+    $('#purchase-options-loading h4').html('Chrome Web Store subscription pricing unavailable.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payments</a>.<br/>Alternatively, you may purchase the Lifetime Pass through PayPal.')
+    $('#purchase-options').show();
+    
+    addPaypal();
   }
 
   google.payments.inapp.getSkuDetails({
