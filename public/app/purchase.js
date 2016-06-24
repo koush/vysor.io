@@ -74,4 +74,19 @@ $(document).ready(function() {
   'success': onSkuDetails,
   'failure': onSkuDetailsFail
   });
+  
+  $('#retrieve').click(function() {
+    chrome.identity.getAuthToken({
+      interactive: true,
+      // must use the exact same scopes used to submit the license or the token shits
+      scopes: ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
+    }, function(token) {
+      if (!token) {
+        console.log('Unable to get token for retrieve?')
+        return;
+      }
+      
+      refreshLicenseManager();
+    });
+  })
 })
