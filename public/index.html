@@ -15,7 +15,9 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <meta name="google-site-verification" content="NMNRE8QlDFmRd0I0WIY4eVyfE7SohaXJxJ73oGc-8fo" />
     <link href="app/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <style>
+    <link rel="chrome-webstore-item"
+        href="https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm">
+            <style>
     .wrapper.style2 .image {
       box-shadow : none
     }
@@ -69,6 +71,21 @@
       color: #999999;
     }
     </style>
+    
+    <script>
+    function fallbackInstall() {
+      window.location = 'https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1'
+    }
+    function tryInlineInstall() {
+      if (!window.chrome || !window.chrome.webstore || !window.chrome.webstore.install)
+        return fallbackInstall();
+      
+      chrome.webstore.install('https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm',
+      function() {
+        
+      }, fallbackInstall)
+    }
+    </script>
 	</head>
 	<body id="top">
     <div class="navbar navbar-inverse">
@@ -79,7 +96,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1">Download</a></li>
+            <li><a href="javascript:tryInlineInstall()">Install</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="https://plus.google.com/110558071969009568835/posts/1uS4nfW7xhp">Support</a></li>
           </ul>
@@ -93,7 +110,7 @@
 					<h1><a href="#">Vysor</a></h1>
 					<p>A window to your Android</p>
 					<ul class="actions">
-						<li><a href="https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1" class="button special icon fa-download">Download</a></li>
+						<li><a href="javascript:tryInlineInstall()" class="button special icon fa-download">Install</a></li>
             <li><a href="https://www.youtube.com/watch?v=qAHTini67GA" class="button icon scrolly popup-youtube">Watch the Video</a></li>
             <li><a href="#one" class="button icon fa-chevron-down scrolly">Learn More</a></li>
 					</ul>
