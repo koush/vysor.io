@@ -14,6 +14,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <meta name="google-site-verification" content="NMNRE8QlDFmRd0I0WIY4eVyfE7SohaXJxJ73oGc-8fo" />
+    <link href="app/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
     .wrapper.style2 .image {
       box-shadow : none
@@ -36,10 +37,48 @@
     table tbody td:nth-child(2), table tbody td:nth-child(3), table thead tr th:nth-child(2), table thead tr th:nth-child(3) {
       text-align: center;
     }
+    
+
+    .navbar-inverse .navbar-brand {
+      color: white;
+    }
+
+    .navbar-inverse {
+      background-color: #4696e5;
+      border-color: #4696e5;
+    }
+    
+    .navbar {
+      border-radius: initial;
+      margin-bottom: 0px;
+    }
+    
+    .navbar a {
+      border-bottom: initial;
+    }
+    
+    .navbar-inverse .navbar-nav>li>a {
+      color: white;
+    }
     </style>
 	</head>
 	<body id="top">
+    <div class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Vysor</a>
+        </div>
 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1">Download</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="https://plus.google.com/110558071969009568835/posts/1uS4nfW7xhp">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
 		<!-- Header -->
 			<header id="header">
 				<div class="content">
@@ -56,7 +95,7 @@
 
 		<!-- One -->
       <section id="one" class="wrapper style2 special">
-        <img src='/vysor-desktop.png' style='width: 100%;'></img>
+        <img src='/vysor-desktop.jpg' style='width: 100%;'></img>
         <header class="major">
           <h2>Vysor puts a fully controllable window of your Android on your desktop.<br />
           An easy install Chrome app, compatible with all operating systems.</h2>
@@ -181,10 +220,10 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td colspan="3" style='text-align: right;'>$1.99/mo, $9.99/yr, or $39.99/lifetime</td>
+                    <td colspan="3" style='text-align: right;'>$1.99/mo, $9.99/yr, or $39.99/lifetime. Purchase available in app.</td>
                   </tr>
                   <tr>
-                    <td colspan="3" style='text-align: right;'>Enterprise Billing is also available. <a href='https://billing.vysor.io/' style='color: #4A98E5'>Log in here.</a></td>
+                    <td colspan="3" style='text-align: right;'><a href='https://billing.vysor.io/' style='color: #4A98E5'>Enterprise Licensing</a> is also available.</td>
                   </tr>
                 </tfoot>
               </table>
