@@ -9,7 +9,7 @@
     <link href="loader.css" rel="stylesheet">
     <style>
       body {
-        font-family: 'Roboto', sans-serif;
+/*        font-family: 'Roboto', sans-serif;*/
         background-color: #000;
         position: absolute;
         padding: 0;
@@ -39,7 +39,7 @@
       
       .head {
         color: white;
-        background-color: #468fcc;
+        background-color: #4696e5;
         position: absolute;
         top: 0;
         height: 36px;
@@ -114,6 +114,14 @@
         margin-top: 200px;
         color: green;
       }
+      
+      
+      #reconnect {
+        color: white;
+        margin-top: 200px;
+        text-align: center;
+      }
+      
     </style>
     <script src='common/jquery-2.1.1.min.js'></script>
     <script src='util.js'></script>
@@ -170,6 +178,12 @@
     <div id='listener'></div>
     <div class='overlay' id='dead'>
       <img src='dead-mac.png' alt='dead'>
+    </div>
+    <div class='overlay' id='reconnect'>
+      <div>
+        <div><i class='fa fa-wifi fa-5x'></i></div>
+        <div><a href="#" class="btn btn-success" id='reconnect-button'>Reconnect</a></div>
+      </div>
     </div>
     <div class='overlay' id='drag'>
         <span class='fa fa-5x fa-upload'></span>

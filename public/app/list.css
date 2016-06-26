@@ -1,8 +1,26 @@
 body {
-  font-family: 'Roboto', sans-serif;
+/*  font-family: 'Roboto', sans-serif;*/
 }
 
 .navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse {
+  background-color: #4696e5;
+  border-color: #4696e5;
+}
+
+.navbar {
+  border-radius: initial;
+  margin-bottom: 0px;
+}
+
+.navbar a {
+  border-bottom: initial;
+}
+
+.navbar-inverse .navbar-nav>li>a {
   color: white;
 }
 
@@ -13,11 +31,6 @@ body {
 
 .checkbox input[type=checkbox] {
   margin-left: 0px;
-}
-
-.navbar-inverse {
-  background-color: #468fcc;
-  border-color: #468fcc;
 }
 
 .list-group-item button {

@@ -39,6 +39,7 @@ $(document).ready(function() {
     var ele = $('<tr><td id="sub"></td><td id="price"></td><td></td></tr>');
     $('#prices').append(ele);
     addPaypal();
+    addEnterprise();
     $('#purchase-options-loading h4').hide();
     $('#purchase-options').show();
   }
@@ -60,6 +61,18 @@ $(document).ready(function() {
     })
     $('#prices').append(ele);
   }
+  
+  function addEnterprise() {
+    var ele = $('<tr><td id="sub"></td><td id="price"></td><td><a id="purchase">Learn More</a></td></tr>');
+    ele.find('#sub').text('Enterprise Licensing')
+    ele.find('#price').text('$2 per user per month');
+    ele.find('#purchase').click(function() {
+      var url = 'https://billing.vysor.io/';
+      chrome.browser.openTab({url: url});
+      chrome.app.window.current().close();        
+    })
+    $('#prices').append(ele);
+  }
 
   function onSkuDetailsFail() {
     console.log(arguments);
@@ -67,6 +80,7 @@ $(document).ready(function() {
     $('#purchase-options').show();
     
     addPaypal();
+    addEnterprise();
   }
 
   google.payments.inapp.getSkuDetails({
