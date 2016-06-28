@@ -70,6 +70,8 @@
 
               // still here? vysor is installed!
               setTimeout(function() {
+                if (window.location.search.indexOf('close=true') != -1)
+                  window.close();
                 $('.actions').hide();
                 $('.instructions').text('Connecting to shared Android devices.');
                 $('.instructions2').text('Vysor will open automatically.');
