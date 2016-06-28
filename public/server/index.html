@@ -22,9 +22,7 @@
         return fallbackInstall();
       
       chrome.webstore.install('https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm',
-      function() {
-        
-      }, fallbackInstall)
+      fallbackInstall, fallbackInstall)
     }
     </script>
 	</head>
