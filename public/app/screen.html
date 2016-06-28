@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Vysor</title>
-    <link href='font/font.css' rel='stylesheet' type='text/css'>
     <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="loader.css" rel="stylesheet">
@@ -51,12 +50,12 @@
       
       .title {
         padding-left: 24px;
-        padding-right: 24px;
         display: table-cell;
         vertical-align: middle;
       }
       
       .topbuttonbar {
+        width: 99%;
         display: table-cell;
         vertical-align: middle;
         padding-left: 24px;
@@ -102,6 +101,20 @@
         background-color: #84A4BE;
       }
       
+      #tutorial {
+        text-align: center;
+        color: white;
+        position: relative;
+        display: flex;
+      }
+
+      #tutorial>h2 {
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 100%;
+        transform: translate(-50%,-50%);
+      }
+      
       #listener {
         position: absolute;
       }
@@ -121,7 +134,6 @@
         margin-top: 200px;
         text-align: center;
       }
-      
     </style>
     <script src='common/jquery-2.1.1.min.js'></script>
     <script src='util.js'></script>
@@ -156,19 +168,19 @@
       <span class='topbuttonbar'>
         <span class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
-            <button id='settings-button' type="button" class="btn btn-default" title="Settings"><span class='fa fa-gear'></span></button>
-            <button id='pin-title-button' type="button" class="btn btn-default" title="Pin Title Menu"><span class='fa fa-thumb-tack'></span></button>
-            <button id='fullscreen-button' type="button" class="btn btn-default" title="Full Screen"><span class='fa fa-arrows-alt'></span></button>
-            <button id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></button>
-            <button id='screenshot-button' type="button" class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></button>
+            <a id='settings-button' type="button" class="btn btn-default" title="Open Main Vysor Window"><span class='fa fa-gear'></span></a>
+            <a id='pin-title-button' type="button" class="btn btn-default" title="Toggle Pin Title Menu"><span class='fa fa-thumb-tack'></span></a>
+            <a id='fullscreen-button' type="button" class="btn btn-default" title="Full Screen"><span class='fa fa-arrows-alt'></span></a>
+            <a id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></a>
+            <a id='screenshot-button' type="button" class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></a>
           </span>
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
-            <button id='volume-down' type="button" class="btn btn-default" title="Volume Down"><span class='fa fa-volume-down'></span></button>
-            <button id='volume-up' type="button" class="btn btn-default" title="Volume Up"><span class='fa fa-volume-up'></span></button>
+            <a id='volume-down' type="button" class="btn btn-default" title="Volume Down"><span class='fa fa-volume-down'></span></a>
+            <a id='volume-up' type="button" class="btn btn-default" title="Volume Up"><span class='fa fa-volume-up'></span></a>
           </span>
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
-            <button id='rotate-button' type="button" class="btn btn-default" title="Rotate"><span class='fa fa-repeat'></span></button>
-            <button id='power' type="button" class="btn btn-default" title="Power"><span class='fa fa-power-off'></span></button>
+            <a id='rotate-button' type="button" class="btn btn-default" title="Rotate Screen"><span class='fa fa-repeat'></span></a>
+            <a id='power' type="button" class="btn btn-default" title="Toggle Screen On/Off"><span class='fa fa-power-off'></span></a>
           </span>
         </span>
       </span>        
@@ -176,6 +188,9 @@
 
     <canvas id='mirror'></canvas>
     <div id='listener'></div>
+    <div id='tutorial'>
+      <h2>Welcome to the tutorial.<br/><br/>Try pushing some buttons.</h2>
+    </div>
     <div class='overlay' id='dead'>
       <img src='dead-mac.png' alt='dead'>
     </div>
@@ -194,9 +209,9 @@
     </div>
     <div class='foot'>
       <div class='foot-row'>
-        <span id='bottom-back' class='fa fa-lg fa-chevron-left'></span>
-        <span id='bottom-home' class='fa fa-lg fa-circle-o'></span>
-        <span id='bottom-tasks' class='fa fa-lg fa-navicon'></span>
+        <span id='bottom-back' class='fa fa-lg fa-chevron-left' title='Back'></span>
+        <span id='bottom-home' class='fa fa-lg fa-circle-o' title='Home'></span>
+        <span id='bottom-tasks' class='fa fa-lg fa-navicon' title='Recent Tasks'></span>
       </div>
     </div>
   </body>

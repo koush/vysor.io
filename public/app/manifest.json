@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.1.0.3",
+  "version": "1.1.0.6",
   "minimum_chrome_version": "48",
   "sockets": {
     "tcp": {
@@ -23,20 +23,24 @@
   "url_handlers": {
     "vysor_purchase": {
       "matches": [
-        "https://vysor.clockworkmod.com/purchase-complete*"
+        "https://vysor.clockworkmod.com/purchase-complete*",
+        "https://www.vysor.io/purchase-complete*"
       ],
       "title": "Vysor Purchase"
     },
     "vysor_presentation": {
       "matches": [
         "https://vysor.clockworkmod.com/view/*",
-        "https://vysor.clockworkmod.com/app/vysor*"
+        "https://vysor.clockworkmod.com/app/vysor*",
+        "https://www.vysor.io/view/*",
+        "https://www.vysor.io/app/vysor*"
       ],
       "title": "Vysor Share"
     },
     "vysor_device_farm": {
       "matches": [
-        "https://vysor.clockworkmod.com/redirects/*"
+        "https://vysor.clockworkmod.com/redirects/*",
+        "https://www.vysor.io/redirects/*"
       ],
       "title": "Vysor Device Farm"
     }
