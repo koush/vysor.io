@@ -29,6 +29,24 @@
       </div>
     </div>
     <div id='site-wrapper'>
+      <div class="modal fade"  id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id='modal-title'></h4>
+            </div>
+            <div class="modal-body">
+              <p id='modal-body'></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id='modal-cancel'></button>
+              <button type="button" class="btn btn-primary" id='modal-ok'></button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
       <h5 id='choose-header' class='list-header'>
         Choose a device
       </h5>
@@ -117,7 +135,7 @@
       <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
           <div class="navbar-header">
-            <p class="navbar-text"><a href="https://twitter.com/vysorapp" target="_blank">@vysorapp</a><span> by </span><a href="https://www.clockworkmod.com/" target="_blank">ClockworkMod</a></p>
+            <p class="navbar-text"><a href="http://twitter.com/vysorapp" target="_blank">@vysorapp</a><span> by </span><a href="http://www.clockworkmod.com/" target="_blank">ClockworkMod</a></p>
             <a class="navbar-text" href="https://plus.google.com/110558071969009568835/posts/1uS4nfW7xhp" target='_blank'>Support</a>
             <a id='tutorial' class="navbar-text" href="#">Tutorial</a>
             <a id='reload-vysor' class="navbar-text" href='#' name="reload-vysor">Reload Vysor</a>

@@ -54,6 +54,10 @@ $(document).ready(function() {
         interactive: true,
         scopes: ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
       }, function(token) {
+        if (!token) {
+          showNotification('Unable to retrieve Google auth token. Are you behind a firewall or using a VPN?')
+          return;
+        }
         var url = 'https://clockworkbilling.appspot.com/api/v1/paypalorder/koushd@gmail.com/vysor.lifetime?return_url=https://vysor.clockworkmod.com/purchase&sandbox=false&token=' + token;
         chrome.browser.openTab({url: url});
         chrome.app.window.current().close();        
@@ -76,7 +80,7 @@ $(document).ready(function() {
 
   function onSkuDetailsFail() {
     console.log(arguments);
-    $('#purchase-options-loading h4').html('Chrome Web Store subscription pricing unavailable.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payments</a>.<br/>Alternatively, you may purchase the Lifetime Pass through PayPal.')
+    $('#purchase-options-loading h4').html('Chrome Web Store subscription pricing unavailable.<br/>This may be caused when behind a VPN or firewall.<br/>Please make ensure you are <a href="https://www.google.com/chrome/browser/signin.html" target="_blank">logged into Chrome</a><br/>and <a href="https://developer.chrome.com/webstore/pricing#seller" target="_blank">your country supports Chrome Web Store payments</a>.<br/>Alternatively, you may purchase the Lifetime Pass through PayPal.')
     $('#purchase-options').show();
     
     addPaypal();

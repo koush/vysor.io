@@ -64,4 +64,10 @@ $(document).ready(function() {
   checkUsage();
 });
 
+function goModal() {
+  $('#myModal').modal();
+}
 
+function hideModal() {
+  $('#myModal').modal('hide');
+}
