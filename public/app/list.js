@@ -65,9 +65,18 @@ $(document).ready(function() {
 });
 
 function goModal() {
-  $('#myModal').modal();
+  $('#notificationModal').modal();
 }
 
 function hideModal() {
-  $('#myModal').modal('hide');
+  $('#notificationModal').modal('hide');
+}
+
+function showConnect() {
+  $('#connectModal').modal();
+  
+}
+
+function hideConnect() {
+  $('#connectModal').modal('hide');
 }
