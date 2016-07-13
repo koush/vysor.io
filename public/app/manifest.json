@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.1.1.8",
+  "version": "1.1.2.0",
   "minimum_chrome_version": "48",
   "sockets": {
     "tcp": {
@@ -21,6 +21,12 @@
     "clipboardWrite"
   ],
   "url_handlers": {
+    "inkwire_share": {
+      "matches": [
+        "https://inkwire.clockworkmod.com/share*"
+      ],
+      "title": "Inkwire"
+    },
     "vysor_purchase": {
       "matches": [
         "https://vysor.clockworkmod.com/purchase-complete*",
