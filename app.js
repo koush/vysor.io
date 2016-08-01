@@ -73,7 +73,7 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-var debug = require('debug')('allcast-site');
+var debug = require('debug')('vysor-site');
 
 app.set('port', process.env.PORT || 3000);
 

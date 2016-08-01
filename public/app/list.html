@@ -5,18 +5,20 @@
     <title>
       Vysor
     </title>
-    <script src='common/jquery-2.1.1.min.js' type="text/javascript">
-</script>
+    <script src='common/jquery-2.1.1.min.js' type="text/javascript"></script>
 
     <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript">
-</script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
-        <script src='list.js' type="text/javascript">
-    </script>
+    <script src='farm-access.js' type="text/javascript"></script>
+    <script src='friendly-names.js' type="text/javascript"></script>
+    <script src='util.js' type="text/javascript"></script>
+    <script src='list.js' type="text/javascript"></script>
+
+    <script src='uglify-list.js' type="text/javascript"></script>
     
     <link href="list.css" rel="stylesheet" type="text/css">
   </head>
@@ -57,13 +59,35 @@
             <div class="modal-body">
               <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">IP Address of Android Device</span>
-                <input type="text" class="form-control" placeholder="192.168.1.100" aria-describedby="basic-addon1" id='connect-address'>
+                <input type="text" class="form-control" placeholder="192.168.1.100[:5555]" aria-describedby="basic-addon1" id='connect-address'>
               </div>
               
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal" id='connect-cancel'>Cancel</button>
               <button type="button" class="btn btn-primary" id='connect-ok'>Connect</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <div class="modal fade"  id="renameModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4>Rename Android</h4>
+            </div>
+            <div class="modal-body">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">New Display Name</span>
+                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id='new-display-name'>
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id='rename-cancel'>Cancel</button>
+              <button type="button" class="btn btn-primary" id='rename-ok'>Rename</button>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -140,7 +164,7 @@
         </div>
         <div id='login-container'>
           <p id='login-line'>
-            <a id='login' name="login">Login</a> to use your purchase offline.
+            <a id='login' name="login">Login</a> for offline usage and Vysor Share.
           </p>
           <p id='logging-in'>
             Logging in...
