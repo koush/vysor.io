@@ -79,6 +79,7 @@
   },
   "manifest_version": 2,
   "permissions": [
+    "alwaysOnTopWindows",
     "identity",
     "identity.email",
     "app.window.fullscreen",

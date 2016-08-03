@@ -37,6 +37,7 @@
       }
       
       .head {
+        -webkit-app-region: drag;
         color: white;
         background-color: #4696e5;
         position: absolute;
@@ -136,20 +137,15 @@
       }
     </style>
     <script src='common/jquery-2.1.1.min.js'></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src='util.js'></script>
     <script src='socket/socket.js'></script>
     <script src='socket/fetch.js'></script>
     <script src='socket/filesocket.js'></script>
     <script src='socket/gcmsocket.js'></script>
     <script src='adb/adb-client.js'></script>
-
-    <!-- deprecated -->
-    <!--
-    <script src='h264/WebGLCanvas.js'></script>
-    <script src='h264/avc-codec.js'></script>
-    <script src='h264/avc.js'></script>
-    -->
-
+    <script src='device-settings.js' type="text/javascript"></script>
+    <script src='modal.js'></script>
     <script src='screen.js'></script>
     
     <script src='video_decode/common.js'></script>
@@ -159,19 +155,130 @@
   </head>
 
   <body>
+    <div class="modal fade"  id="settings-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Settings</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Name</span>
+                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id='new-display-name'>
+              </div>
+              <br/>
+            
+              <label>Window</label>
+              <div class='well'>
+                <div class="checkbox">
+                  <label>
+                    <input id='pin-title-check' type="checkbox" checked> Pin Title Bar
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input id='softkeys-check' type="checkbox" checked> Navigation Bar
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input id='fullscreen-check' type="checkbox"> Fullscreen Mode
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input id='always-on-top-check' type="checkbox"> Always On Top
+                  </label>
+                </div>
+              </div>
+
+              <div id='quality-container'>
+                <label>Image Quality</label>
+                <div class='well'>
+                  <label>Bitrate</label>
+                  <select id='bitrate' class="form-control">
+                    <option>
+                      500Kbps (fast, low quality)
+                    </option>
+                    <option>
+                      750Kbps
+                    </option>
+                    <option>
+                      1Mbit
+                    </option>
+                    <option>
+                      1.5Mbit
+                    </option>
+                    <option>
+                      2Mbit
+                    </option>
+                    <option>
+                      3Mbit
+                    </option>
+                    <option>
+                      4Mbit (slow, high quality)
+                    </option>
+                  </select>
+
+                  <br/>
+                  <label>Resolution</label>
+                  <select id='resolution' class="form-control">
+                    <option>Use Recommended Settings</option>
+                    <option>25%</option>
+                    <option>50%</option>
+                    <option>75%</option>
+                    <option>Original</option>
+                  </select>
+
+                  <br/>
+                  <label>Video Decoder</label>
+                  <select id='decoder' class="form-control">
+                    <option>Software (Recommended)</option>
+                    <option>Hardware</option>
+                    <option>Hardware with fallback</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id='settings-cancel'>Cancel</button>
+            <button type="button" class="btn btn-default" id='settings-defaults'>Defaults</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id='settings-ok'>Save</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade"  id="notificationModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id='modal-title'></h4>
+          </div>
+          <div class="modal-body">
+            <p id='modal-body'></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id='modal-cancel'></button>
+            <button type="button" class="btn btn-primary" id='modal-ok'></button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <div class='head'>
-      <span class='title' style='white-space: nowrap;'>
-        <span>Vysor</span>
-        <span>&nbsp;-&nbsp;</span>
-        <span id='serialno'></span>
-      </span>
+      <span class='title' style='white-space: nowrap;'>Vysor</span>
       <span class='topbuttonbar'>
         <span class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
             <a id='settings-button' type="button" class="btn btn-default" title="Open Main Vysor Window"><span class='fa fa-gear'></span></a>
-            <a id='pin-title-button' type="button" class="btn btn-default" title="Toggle Pin Title Menu"><span class='fa fa-thumb-tack'></span></a>
+            <!-- <a id='pin-title-button' type="button" class="btn btn-default" title="Toggle Pin Title Menu"><span class='fa fa-thumb-tack'></span></a>
             <a id='fullscreen-button' type="button" class="btn btn-default" title="Full Screen"><span class='fa fa-arrows-alt'></span></a>
-            <a id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></a>
+            <a id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></a> -->
             <a id='screenshot-button' type="button" class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></a>
           </span>
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">

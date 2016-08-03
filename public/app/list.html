@@ -13,9 +13,10 @@
 
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
+    <script src='device-settings.js' type="text/javascript"></script>
     <script src='farm-access.js' type="text/javascript"></script>
-    <script src='friendly-names.js' type="text/javascript"></script>
     <script src='util.js' type="text/javascript"></script>
+    <script src='modal.js' type="text/javascript"></script>
     <script src='list.js' type="text/javascript"></script>
 
     <script src='uglify-list.js' type="text/javascript"></script>
@@ -31,6 +32,99 @@
       </div>
     </div>
     <div id='site-wrapper'>
+      <div class="modal fade"  id="settings-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id='settings-title'>Settings</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">Name</span>
+                  <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id='new-display-name'>
+                </div>
+                <br/>
+              
+
+                <label>Window</label>
+                <div class='well'>
+                  <div class="checkbox">
+                    <label>
+                      <input id='pin-title-check' type="checkbox" checked> Pin Title Bar
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input id='softkeys-check' type="checkbox" checked> Navigation Bar
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input id='always-on-top-check' type="checkbox"> Always On Top
+                    </label>
+                  </div>
+                </div>
+
+                <div id='quality-container'>
+                  <label>Image Quality</label>
+                  <div class='well'>
+                    <label>Bitrate</label>
+                    <select id='bitrate' class="form-control">
+                      <option>
+                        500Kbps (fast, low quality)
+                      </option>
+                      <option>
+                        750Kbps
+                      </option>
+                      <option>
+                        1Mbit
+                      </option>
+                      <option>
+                        1.5Mbit
+                      </option>
+                      <option>
+                        2Mbit
+                      </option>
+                      <option>
+                        3Mbit
+                      </option>
+                      <option>
+                        4Mbit (slow, high quality)
+                      </option>
+                    </select>
+
+                    <br/>
+                    <label>Resolution</label>
+                    <select id='resolution' class="form-control">
+                      <option>Use Recommended Settings</option>
+                      <option>25%</option>
+                      <option>50%</option>
+                      <option>75%</option>
+                      <option>Original</option>
+                    </select>
+
+                    <br/>
+                    <label>Video Decoder</label>
+                    <select id='decoder' class="form-control">
+                      <option>Software (Recommended)</option>
+                      <option>Hardware</option>
+                      <option>Hardware with fallback</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id='settings-cancel'>Cancel</button>
+            <button type="button" class="btn btn-default" id='settings-defaults'>Defaults</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id='settings-ok'>Save</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
       <div class="modal fade"  id="notificationModal" tabindex="-1" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -71,29 +165,6 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-      <div class="modal fade"  id="renameModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4>Rename Android</h4>
-            </div>
-            <div class="modal-body">
-              <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">New Display Name</span>
-                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id='new-display-name'>
-              </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal" id='rename-cancel'>Cancel</button>
-              <button type="button" class="btn btn-primary" id='rename-ok'>Rename</button>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
-
-
       <h5 id='choose-header' class='list-header'>
         Choose a device
       </h5>
@@ -109,30 +180,8 @@
       <h5>
         Settings
       </h5>
-      <div class='well'>
+      <div class='well main-settings'>
         <form class='form-horizontal'>
-          <div class='form-group'>
-            <label class='col-sm-4 control-label'>Image Quality</label>
-            <div class='col-sm-6'>
-              <select class="form-control" style='' id='bitrate'>
-                <option>
-                  500Kbps (fast, low quality)
-                </option>
-                <option>
-                  750Kbps
-                </option>
-                <option>
-                  1Mbit
-                </option>
-                <option>
-                  1.5Mbit
-                </option>
-                <option>
-                  2Mbit (slow, high quality)
-                </option>
-              </select>
-            </div>
-          </div>
           <div id='vysor-keyboard' class='form-group'>
             <label class='col-sm-4 control-label'>International Keyboard</label>
             <div class='col-sm-6 checkbox'>
