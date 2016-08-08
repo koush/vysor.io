@@ -5,10 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src='common/jquery-2.1.1.min.js'></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src='common/buy.js'></script>
-    <script src='common/jquery-2.1.1.min.js'></script>
     <script src='util.js'></script>
-    <script src='purchase.js'></script>
+		<script src='modal.js'></script>
+		<script src='purchase.js'></script>
     <script src='uglify-purchase.js'></script>
     <style>
     .blue-icon {
@@ -44,10 +46,28 @@
     </style>
   </head>
   <body>
-				<header class="major">
-					<h2>Upgrade Vysor</h2>
-          <h4 id='used'></h4>
-				</header>
+    <div class="modal fade"  id="notificationModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id='modal-title'></h4>
+          </div>
+          <div class="modal-body">
+            <p id='modal-body'></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id='modal-cancel'></button>
+            <button type="button" class="btn btn-primary" id='modal-ok'></button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+		<header class="major">
+			<h2>Upgrade Vysor</h2>
+      <h4 id='used'></h4>
+		</header>
 		<section id="pricing" class="wrapper">
 			<div class="inner">
         <section>
@@ -109,7 +129,7 @@
               </tfoot> -->
             </table>
           </div>
-        </section> 
+        </section>
       </div>
     </section>
 
@@ -120,9 +140,9 @@
             <table class="table table-column-striped">
               <thead>
                 <tr>
-                  <th>Vysor Pro</th>
+                  <th>Vysor Pro Purchase Options</th>
                   <th width='30%'>Price</th>
-                  <th width='30%'></th>
+                  <th width='30%'>Payment Method</th>
                 </tr>
               </thead>
               <tbody id='prices'>

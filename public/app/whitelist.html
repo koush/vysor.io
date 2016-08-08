@@ -17,7 +17,7 @@
     <script src='uglify-whitelist.js' type="text/javascript"></script>
     <style>
     textarea {
-       position:absolute; top:50px; left:0; right:0; bottom: 50px; padding:1em;
+       position:absolute; top:150px; left:0; right:0; bottom: 50px; padding:1em;
     }
     body {
 /*      font-family: 'Roboto', sans-serif;*/
@@ -30,16 +30,16 @@
       background-color: #4696e5;
       border-color: #4696e5;
     }
-    
+
     .navbar {
       border-radius: initial;
       margin-bottom: 0px;
     }
-    
+
     .navbar a {
       border-bottom: initial;
     }
-    
+
     .navbar-inverse .navbar-nav>li>a {
       color: white;
     }
@@ -52,6 +52,20 @@
           <a class="navbar-brand" href="#">Vysor Whitelist</a>
         </div>
       </div>
+    </div>
+    <div class='well'>
+      <label>Server Access</label>
+      <select id='server-mode' class="form-control">
+        <option>
+          Whitelist
+        </option>
+        <option>
+          Open Server - no authentication
+        </option>
+        <option>
+          Vysor Enterprise
+        </option>
+      </select>
     </div>
     <textarea class="form-control"></textarea>
     <div class="navbar navbar-default navbar-fixed-bottom">

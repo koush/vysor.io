@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.1.3.2",
+  "version": "1.1.3.5",
   "minimum_chrome_version": "51",
   "sockets": {
     "tcp": {
@@ -17,6 +17,7 @@
     "48": "icon.png",
     "128": "icon.png"
   },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi734PoPrQ2TyGuPcgsQkpmRY8v4qCPrYsC+fFDjvr+MPLmF9y2Qdi8VoalmNJtMiT80iDC/xJudzrhi5cnOR8z3+QVQX0x4Jxp/eOLl9AHERcJIzJpOwjD/RRloeg5UTgGBs3jFgh/+TbL2td05cODBSb5LI44STv9JEavenvtHeKqtWS7xeHnQaAiGp7XBVyyRCuaBQ5U0p072CVzaYc3I0yLR+5tz4uM3P9afz/vIiIo1jAdqD7eSH4caulF0mVNzzZHaRwWPt96wS472QDxkBX0zrQG6xpAJwgxGvZob87Gel3V31Mp8Auk8em3YCElLsbA+7+YIaTIuiPtveuQIDAQAB",
   "optional_permissions": [
     "clipboardWrite"
   ],
