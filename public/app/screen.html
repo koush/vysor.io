@@ -27,7 +27,7 @@
         opacity: .75;
         display: none;
       }
-      
+
       .overlay img {
         background-color: black;
         width: 100%;
@@ -35,7 +35,7 @@
         margin: auto;
         margin-top: 100px;
       }
-      
+
       .head {
         -webkit-app-region: drag;
         color: white;
@@ -48,13 +48,13 @@
         display: table;
         table-layout: fixed;
       }
-      
+
       .title {
         padding-left: 24px;
         display: table-cell;
         vertical-align: middle;
       }
-      
+
       .topbuttonbar {
         width: 99%;
         display: table-cell;
@@ -66,11 +66,11 @@
       .topbuttonbar .btn-toolbar {
         float: right;
       }
-      
+
       #settings {
         text-align: center;
       }
-      
+
       .foot {
         display: table;
         background-color: #468fcc;
@@ -80,7 +80,7 @@
         z-index: 99;
         width: 100%;
       }
-      
+
       .foot span {
         display: table-cell;
         vertical-align: middle;
@@ -101,7 +101,7 @@
       .foot span:active {
         background-color: #84A4BE;
       }
-      
+
       #tutorial {
         text-align: center;
         color: white;
@@ -115,44 +115,47 @@
         width: 100%;
         transform: translate(-50%,-50%);
       }
-      
+
       #listener {
         position: absolute;
       }
-      
+
       #drag {
         text-align: center;
       }
-      
+
       #drag span {
         margin-top: 200px;
         color: green;
       }
-      
-      
+
+
       #reconnect {
         color: white;
         margin-top: 200px;
         text-align: center;
       }
     </style>
-    <script src='common/jquery-2.1.1.min.js'></script>
-    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src='common/jquery-2.1.1.min.js' type='text/javascript'></script>
+    <script src="bootstrap/js/bootstrap.min.js" type='text/javascript'></script>
 
-    <script src='util.js'></script>
-    <script src='socket/socket.js'></script>
-    <script src='socket/fetch.js'></script>
-    <script src='socket/filesocket.js'></script>
-    <script src='socket/gcmsocket.js'></script>
-    <script src='adb/adb-client.js'></script>
-    <script src='device-settings.js' type="text/javascript"></script>
-    <script src='modal.js'></script>
-    <script src='screen.js'></script>
-    
-    <script src='video_decode/common.js'></script>
-    
+    <script src='util.js' type='text/javascript'></script>
+    <script src='bytebuffer.js' type='text/javascript'></script>
+    <script src='socket/socket.js' type='text/javascript'></script>
+    <script src='socket/fetch.js' type='text/javascript'></script>
+    <script src='socket/filesocket.js' type='text/javascript'></script>
+    <script src='socket/gcmsocket.js' type='text/javascript'></script>
+    <script src='adb/adb-client.js' type='text/javascript'></script>
+    <script src='device-settings.js' type='text/javascript'></script>
+    <script src='modal.js' type='text/javascript'></script>
+    <script src='socket/dummysocket.js' type='text/javascript'></script>
+    <script src='flash.js' type='text/javascript'></script>
+    <script src='screen.js' type='text/javascript'></script>
+
+    <script src='video_decode/common.js' type='text/javascript'></script>
+
     <!-- dirty hack -->
-    <script src='uglify-screen.js'></script>
+    <script src='uglify-screen.js' type='text/javascript'></script>
   </head>
 
   <body>
@@ -170,7 +173,7 @@
                 <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" id='new-display-name'>
               </div>
               <br/>
-            
+
               <label>Window</label>
               <div class='well'>
                 <div class="checkbox">
@@ -242,6 +245,14 @@
                   </select>
                 </div>
               </div>
+
+              <div>
+                <label>Status</label>
+                <div class='well'>
+                  <label>Web Video Stream</label>
+                  <p><a id='web-video-stream'></a></p>
+                </div>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -276,22 +287,22 @@
       <span class='topbuttonbar'>
         <span class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
-            <a id='settings-button' type="button" class="btn btn-default" title="Open Device Settings"><span class='fa fa-gear'></span></a>
+            <a id='settings-button' class="btn btn-default" title="Open Device Settings"><span class='fa fa-gear'></span></a>
             <!-- <a id='pin-title-button' type="button" class="btn btn-default" title="Toggle Pin Title Menu"><span class='fa fa-thumb-tack'></span></a>
             <a id='fullscreen-button' type="button" class="btn btn-default" title="Full Screen"><span class='fa fa-arrows-alt'></span></a>
             <a id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></a> -->
-            <a id='screenshot-button' type="button" class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></a>
+            <a id='screenshot-button' class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></a>
           </span>
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
-            <a id='volume-down' type="button" class="btn btn-default" title="Volume Down"><span class='fa fa-volume-down'></span></a>
-            <a id='volume-up' type="button" class="btn btn-default" title="Volume Up"><span class='fa fa-volume-up'></span></a>
+            <a id='volume-down' class="btn btn-default" title="Volume Down"><span class='fa fa-volume-down'></span></a>
+            <a id='volume-up' class="btn btn-default" title="Volume Up"><span class='fa fa-volume-up'></span></a>
           </span>
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
-            <a id='rotate-button' type="button" class="btn btn-default" title="Rotate Screen"><span class='fa fa-repeat'></span></a>
-            <a id='power' type="button" class="btn btn-default" title="Toggle Screen On/Off"><span class='fa fa-power-off'></span></a>
+            <a id='rotate-button' class="btn btn-default" title="Rotate Screen"><span class='fa fa-repeat'></span></a>
+            <a id='power' class="btn btn-default" title="Toggle Screen On/Off"><span class='fa fa-power-off'></span></a>
           </span>
         </span>
-      </span>        
+      </span>
     </div>
 
     <canvas id='mirror'></canvas>
