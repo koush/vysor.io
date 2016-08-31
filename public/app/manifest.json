@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.1.3.8",
+  "version": "1.1.4.0",
   "minimum_chrome_version": "51",
   "sockets": {
     "tcp": {
@@ -64,7 +64,15 @@
       ]
     }
   },
+  "nacl_modules": [
+    {
+      "path": "video_decode/video_decode.nmf",
+      "mime_type": "application/x-ppapi-vysor"
+    }
+  ],
   "oauth2": {
+    "electron_chrome_client_id": "64148182473-0srpk64ba4n1qqh2jia3g0ugjgdtp371.apps.googleusercontent.com",
+    "electron_chrome_client_secret": "Q-bP8ZKlLMfwRK8oq97MaqjL",
     "client_id": "64148182473-mmrruv55po0sjb7ghlnmhgkkuk2u8eou.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/userinfo.profile",

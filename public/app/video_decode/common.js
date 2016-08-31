@@ -19,7 +19,7 @@ var isRelease = true;
 var common = (function() {
 
   function isHostToolchain(tool) {
-    return tool == 'win' || tool == 'linux' || tool == 'mac';
+    return tool == 'win' || tool == 'linux' || tool == 'mac' || tool == 'host';
   }
 
   /**
@@ -120,14 +120,34 @@ var common = (function() {
    * @param {number} height The height to create the plugin.
    * @param {Object} attrs Dictionary of attributes to set on the module.
    */
-  function createNaClModule(name, tool, path, width, height, attrs, messageHandler, loadedHandler) {
+  function createNaClModule(name, type, tool, path, width, height, attrs, messageHandler, loadedHandler) {
     var moduleEl = document.createElement('embed');
     moduleEl.setAttribute('name', 'nacl_module');
     moduleEl.setAttribute('id', 'nacl_module');
     moduleEl.setAttribute('width', width);
     moduleEl.setAttribute('height', height);
-    moduleEl.setAttribute('path', path);
-    moduleEl.setAttribute('src', path + '/' + name + '.nmf');
+
+    var hasPlugin;
+    for (var i = 0; i < navigator.plugins.length; i++) {
+      var plugin = navigator.plugins[i];
+      for (var j = 0; j < plugin.length; j++) {
+        var mime = plugin[j];
+        if (mime.type == type) {
+          console.log('found plugin for', type);
+          hasPlugin = true;
+          break;
+        }
+      }
+      if (hasPlugin)
+        break;
+    }
+    if (!hasPlugin) {
+      moduleEl.setAttribute('path', path);
+      moduleEl.setAttribute('src', path + '/' + name + '.nmf');
+    }
+    else {
+      moduleEl.setAttribute('type', type);
+    }
 
     moduleEl.loadedHandler = loadedHandler;
 
@@ -140,7 +160,8 @@ var common = (function() {
     }
 
     var mimetype = mimeTypeForTool(tool);
-    moduleEl.setAttribute('type', mimetype);
+    if (!isHostToolchain(tool))
+      moduleEl.setAttribute('type', mimetype);
 
     // The <EMBED> element is wrapped inside a <DIV>, which has both a 'load'
     // and a 'message' event listener attached.  This wrapping method is used
@@ -332,7 +353,7 @@ var common = (function() {
         }
       }
     }
-    
+
     if (typeof message_event.currentTarget.messageHandler !== 'undefined') {
       message_event.currentTarget.messageHandler(message_event);
       return;

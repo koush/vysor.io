@@ -1,0 +1,14 @@
+{
+  "files": {},
+  "program": {
+    "mac": {
+      "url": "mac/Release/video_decode.so"
+    },
+    "windows": {
+      "url": "windows/Release/video_decode.dll"
+    },
+    "linux": {
+      "url": "linux/Release/video_decode.so"
+    }
+  }
+}
