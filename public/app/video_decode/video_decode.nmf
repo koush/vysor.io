@@ -1,14 +1,14 @@
 {
   "files": {},
   "program": {
-    "mac": {
-      "url": "mac/Release/video_decode.so"
+    "darwin": {
+      "url": "../../platform-assets/darwin/Release/video_decode.so"
     },
-    "windows": {
-      "url": "windows/Release/video_decode.dll"
+    "win32": {
+      "url": "../../platform-assets/win32/Release/video_decode.dll"
     },
     "linux": {
-      "url": "linux/Release/video_decode.so"
+      "url": "../../platform-assets/linux/Release/video_decode.so"
     }
   }
 }
