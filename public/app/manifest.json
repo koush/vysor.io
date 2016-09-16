@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.2.0",
+  "version": "1.2.5",
   "minimum_chrome_version": "51",
   "sockets": {
     "tcp": {
