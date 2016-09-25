@@ -69,7 +69,7 @@
             setTimeout(function() {
 							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
 							var newLocation = window.location.toString().replace('/server/', '/redirects/');
-							var customLocation = newLocation.replace('http', customProtocol).replace('https', customProtocol);
+							var customLocation = newLocation.replace('https', customProtocol).replace('http', customProtocol);
 							protocolCheck(customLocation, function() {
 								window.location = newLocation;
 							})
