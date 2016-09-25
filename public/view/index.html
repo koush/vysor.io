@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src='/protocolcheck.js'></script>
     <script>
     function fallbackInstall() {
       window.location = 'https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1'
@@ -20,7 +21,7 @@
     function tryInlineInstall() {
       if (!window.chrome || !window.chrome.webstore || !window.chrome.webstore.install)
         return fallbackInstall();
-      
+
       chrome.webstore.install('https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm',
       fallbackInstall, fallbackInstall)
     }
@@ -60,16 +61,21 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-    
+
       <script>
         $(document).ready(function() {
           if (window.location.toString().indexOf('redirect') != -1) {
             // after a second, redirect to trigger vysor
             setTimeout(function() {
-              if (navigator.userAgent.indexOf('Chrome') == -1)
-                window.location = window.location.toString().replace('/redirect/', '/view/');
-              else
-                window.location = window.location.toString().replace('/redirect/', '/app/vysor');
+							var newLocation = window.location.toString().replace('/redirect/', '/app/vysor');
+							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
+							var customLocation = newLocation.replace('https', customProtocol).replace('http', customProtocol);
+							protocolCheck(customLocation, function() {
+								if (navigator.userAgent.indexOf('Chrome') == -1)
+	                window.location = window.location.toString().replace('/redirect/', '/view/');
+	              else
+									window.location = newLocation;
+							})
 
               // still here? vysor is installed!
               setTimeout(function() {
