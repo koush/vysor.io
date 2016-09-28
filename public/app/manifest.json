@@ -2,7 +2,7 @@
   "name": "Vysor",
   "short_name": "Vysor",
   "description": "A window to your Android",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "author": "ClockworkMod",
   "minimum_chrome_version": "51",
   "sockets": {
