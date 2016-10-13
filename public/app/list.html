@@ -112,6 +112,17 @@
                       <option>Hardware</option>
                       <option>Hardware with fallback</option>
                     </select>
+
+                    <br/>
+                    <label>Display Settings</label>
+                    <select id='display-settings' class="form-control">
+                    </select>
+
+                    <div class="checkbox">
+                      <label>
+                        <input id='reset-display-settings' type="checkbox"> Reset Display Settings on Exit
+                      </label>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -200,6 +211,12 @@
               <input type="checkbox" name="connect-automatically" value="1" id='connect-automatically-check'>
             </div>
           </div>
+          <div class='form-group'>
+            <label class='col-sm-4 control-label'>Customize Vysor</label>
+            <div class='col-sm-6 checkbox'>
+              <a id='customize-vysor'>Manage Key Bindings and Navigation Bar</a>
+            </div>
+          </div>
         </form>
       </div>
       <h5>
@@ -207,10 +224,11 @@
       </h5>
       <div class='well'>
         <div id='purchase'>
+          <!-- <p id='survey'><a href='https://goo.gl/forms/dXXKiQZV2OZGMLED2' target='_blank'>Please take a quick survey to help improve Vysor.</a></p> -->
           <p>
-            <a id='used' name="used"></a>
+            <a class='purchase' id='used' name="used"></a>
           </p>
-          <img src='payment/cards.png' style="max-height: 40px;"></img>
+          <img class='purchase' src='payment/cards.png' style="max-height: 40px;"></img>
         </div>
         <div id='login-container'>
           <p id='login-line'>
@@ -230,6 +248,7 @@
         <p id='whitelist-count'><a href='#'></a></p>
         <p id='adb-server-status'></p>
         <p id='vysor-version'></p>
+        <div id='desktop-app'><p><a href='https://plus.google.com/110558071969009568835/posts/Ub7QKu2Pddu' target='_blank'>Get the standalone Vysor desktop app for better performance!</a></p></div>
       </div>
       <div class='this-pads-the-footer-so-it-scrolls' style='min-height: 50px'></div>
       <div class="navbar navbar-default navbar-fixed-bottom">
@@ -240,7 +259,8 @@
             <a class="navbar-text" href="http://dev.vysor.io/" target='_blank'>Developers</a>
             <a class="navbar-text" href="https://plus.google.com/110558071969009568835/posts/JLuG3yqRdSH" target='_blank'>Support</a>
             <a class="navbar-text" href="#" id='bugreport'>Bug Report</a>
-            <a id='tutorial' class="navbar-text" href="#">Tutorial</a>
+            <!-- <a id='tutorial' class="navbar-text" href="#">Tutorial</a> -->
+            <a id='manual' class="navbar-text" href="https://plus.google.com/110558071969009568835/posts/8Ka2hG5acNu" target="_blank">Manual</a>
             <a id='reload-vysor' class="navbar-text" href='#' name="reload-vysor">Reload Vysor</a>
             <a id='reset-vysor' class="navbar-text" href='#' name="reload-vysor">Reset Vysor</a>
           </div>

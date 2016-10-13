@@ -87,7 +87,6 @@
         vertical-align: middle;
         text-align: center;
         color: white;
-        width: 33%;
       }
 
       .foot-row {
@@ -101,20 +100,6 @@
 
       .foot span:active {
         background-color: #84A4BE;
-      }
-
-      #tutorial {
-        text-align: center;
-        color: white;
-        position: relative;
-        display: flex;
-      }
-
-      #tutorial>h2 {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 100%;
-        transform: translate(-50%,-50%);
       }
 
       #listener {
@@ -139,6 +124,8 @@
     </style>
     <script src='common/jquery-2.1.1.min.js' type='text/javascript'></script>
     <script src="bootstrap/js/bootstrap.min.js" type='text/javascript'></script>
+
+    <script src="vysor-defaults.js" type='text/javascript'></script>
 
     <script src='util.js' type='text/javascript'></script>
     <script src='bytebuffer.js' type='text/javascript'></script>
@@ -200,7 +187,7 @@
               </div>
 
               <div id='quality-container'>
-                <label>Image Quality</label>
+                <label>Video Quality</label>
                 <div class='well'>
                   <label>Bitrate</label>
                   <select id='bitrate' class="form-control">
@@ -238,12 +225,27 @@
                   </select>
 
                   <br/>
-                  <label>Video Decoder</label>
+                  <label>Decoder</label>
                   <select id='decoder' class="form-control">
                     <option>Software (Recommended)</option>
                     <option>Hardware</option>
                     <option>Hardware with fallback</option>
                   </select>
+                </div>
+              </div>
+
+              <div id='display-settings-container'>
+                <label>Display Settings</label>
+                <div class='well'>
+                  <label>Size</label>
+                  <select id='display-settings' class="form-control">
+                  </select>
+
+                  <div class="checkbox">
+                    <label>
+                      <input id='reset-display-settings' type="checkbox"> Reset Display Settings on Exit
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -292,6 +294,7 @@
             <!-- <a id='pin-title-button' type="button" class="btn btn-default" title="Toggle Pin Title Menu"><span class='fa fa-thumb-tack'></span></a>
             <a id='fullscreen-button' type="button" class="btn btn-default" title="Full Screen"><span class='fa fa-arrows-alt'></span></a>
             <a id='softkey-button' type="button" class="btn btn-default" title="Toggle Soft Input Panel"><span class='fa fa-keyboard-o'></span></a> -->
+            <a id='record-button' class="btn btn-default" title="Record Screen"><span class='fa fa-video-camera'></span></a>
             <a id='screenshot-button' class="btn btn-default" title="Take Screenshot"><span class='fa fa-camera'></span></a>
           </span>
           <span class="btn-group btn-group-xs" role="group" aria-label="First group">
@@ -308,9 +311,6 @@
 
     <canvas id='mirror'></canvas>
     <div id='listener'></div>
-    <div id='tutorial'>
-      <h2>Welcome to the tutorial.<br/><br/>Try pushing some buttons.</h2>
-    </div>
     <div class='overlay' id='dead'>
       <img src='dead-mac.png' alt='dead'>
     </div>
@@ -329,9 +329,6 @@
     </div>
     <div class='foot'>
       <div class='foot-row'>
-        <span id='bottom-back' class='fa fa-lg fa-chevron-left' title='Back'></span>
-        <span id='bottom-home' class='fa fa-lg fa-circle-o' title='Home'></span>
-        <span id='bottom-tasks' class='fa fa-lg fa-navicon' title='Recent Tasks'></span>
       </div>
     </div>
   </body>

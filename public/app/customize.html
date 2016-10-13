@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Vysor
+    </title>
+    <script src='common/jquery-2.1.1.min.js' type="text/javascript">
+</script>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript">
+</script>
+
+    <script src='vysor-defaults.js' type="text/javascript"></script>
+    <script src='customize.js' type="text/javascript"></script>
+    <style>
+    textarea {
+       position:absolute; top:175px; left:0; right:0; bottom: 50px; padding:1em;
+    }
+    body {
+/*      font-family: 'Roboto', sans-serif;*/
+    }
+    .navbar-inverse .navbar-brand {
+      color: white;
+    }
+
+    .navbar-inverse {
+      background-color: #4696e5;
+      border-color: #4696e5;
+    }
+
+    #error {
+      color: red;
+    }
+
+    .navbar {
+      border-radius: initial;
+      margin-bottom: 0px;
+    }
+
+    .navbar a {
+      border-bottom: initial;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: white;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Customize Vysor</a>
+        </div>
+      </div>
+    </div>
+    <div class='well'>
+      <label>Customizing Vysor</label>
+      <div><a href='https://github.com/koush/vysor.io/issues/211' target='_blank'>Learn More</a></div>
+      <br/>
+      <div id='error'>&nbsp;</div>
+    </div>
+    <textarea class="form-control"></textarea>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class='navbar-header'>
+          <a class="navbar-text" href="#" id='save'>Save</a>
+          <a class="navbar-text" href="#" id='defaults'>Defaults</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
