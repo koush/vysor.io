@@ -1,6 +1,10 @@
 var vysorDefaultSettings =
 // copy everything below into the settings editor. must be valid JSON.
 {
+  "mousedown": {
+    "1": "KEYCODE_HOME",
+    "2": "KEYCODE_BACK"
+  },
   "keydown": {
     "ArrowDown": "KEYCODE_DOWN",
     "ArrowLeft": "KEYCODE_LEFT",
