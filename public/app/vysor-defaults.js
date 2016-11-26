@@ -6,10 +6,10 @@ var vysorDefaultSettings =
     "2": "KEYCODE_BACK"
   },
   "keydown": {
-    "ArrowDown": "KEYCODE_DOWN",
-    "ArrowLeft": "KEYCODE_LEFT",
-    "ArrowRight": "KEYCODE_RIGHT",
-    "ArrowUp": "KEYCODE_UP",
+    "ArrowDown": "KEYCODE_DPAD_DOWN",
+    "ArrowLeft": "KEYCODE_DPAD_LEFT",
+    "ArrowRight": "KEYCODE_DPAD_RIGHT",
+    "ArrowUp": "KEYCODE_DPAD_UP",
     "Backspace": "KEYCODE_DEL",
     "Delete": "KEYCODE_FORWARD_DEL",
     "Enter": "KEYCODE_ENTER",
