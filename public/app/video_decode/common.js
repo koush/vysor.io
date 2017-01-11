@@ -149,9 +149,6 @@ var common = (function() {
       moduleEl.setAttribute('type', type);
     }
 
-    moduleEl.loadedHandler = loadedHandler;
-
-
     // Add any optional arguments
     if (attrs) {
       for (var key in attrs) {
@@ -170,6 +167,7 @@ var common = (function() {
     // event fires.
     var listenerDiv = document.getElementById('listener');
     listenerDiv.messageHandler = messageHandler;
+    listenerDiv.loadedHandler = loadedHandler;
     listenerDiv.appendChild(moduleEl);
 
     // Request the offsetTop property to force a relayout. As of Apr 10, 2014
@@ -258,8 +256,10 @@ var common = (function() {
    */
   function moduleDidLoad() {
     common.naclModule = document.getElementById('nacl_module');
-    if (common.naclModule.loadedHandler)
-      common.naclModule.loadedHandler();
+
+    var listenerDiv = document.getElementById('listener');
+    if (listenerDiv.loadedHandler)
+      listenerDiv.loadedHandler();
     updateStatus('RUNNING');
 
     if (typeof window.moduleDidLoad !== 'undefined') {
