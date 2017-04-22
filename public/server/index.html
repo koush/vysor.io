@@ -14,18 +14,8 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script src='/protocolcheck.js'></script>
-    <script>
-    function fallbackInstall() {
-      window.location = 'https://chrome.google.com/webstore/detail/vysor-beta/gidgenkbbabolejbgbpnhbimgjbffefm?authuser=1'
-    }
-    function tryInlineInstall() {
-      if (!window.chrome || !window.chrome.webstore || !window.chrome.webstore.install)
-        return fallbackInstall();
+		<script src='/install.js'></script>
 
-      chrome.webstore.install('https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm',
-      fallbackInstall, fallbackInstall)
-    }
-    </script>
 	</head>
 	<body id="top">
 
@@ -37,7 +27,7 @@
 					<h5 class='instructions'>Someone is trying to share their Android devices with you.</h5>
 					<h5 class='instructions2'>Download the Vysor Chrome app to connect.</h5>
 					<ul class="actions">
-						<li><a href="javascript:tryInlineInstall()" class="button special icon fa-download">Install Vysor</a></li>
+						<li><a href="javascript:openDownload()" class="button special icon fa-download">Download Vysor</a></li>
             <!-- <li><a href="#one" class="button icon fa-chevron-down scrolly">Learn More</a></li> -->
 					</ul>
 				</div>

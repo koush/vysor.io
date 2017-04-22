@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Vysor Share</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<script>
+		function getUrlVars()
+		{
+		    var vars = [], hash;
+		    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		    for(var i = 0; i < hashes.length; i++)
+		    {
+		        hash = hashes[i].split('=');
+		        vars.push(hash[0]);
+		        vars[hash[0]] = hash[1];
+		    }
+		    return vars;
+		}
+		function installAndClose(platform) {
+			var back = getUrlVars()['return']
+			if (back)
+				window.location = decodeURIComponent(back);
+			window.open('https://vysornuts.clockworkmod.com/download/' + platform);
+		}
+		</script>
+	</head>
+	<body id="top">
+
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Download Vysor</a></h1>
+					<ul class="actions">
+						<li><a id='windows' href="javascript:installAndClose('win32')" class="button icon fa-windows">Windows</a></li>
+						<li><a id='mac' href="javascript:installAndClose('osx')" class="button icon fa-apple">Mac</a></li>
+						<li><a id='linux' href="https://github.com/koush/vysor.io/issues/242" class="button icon fa-linux">Linux</a></li>
+						<li><a id=-'chrome' href="javascript:tryInlineInstall()" class="button icon fa-chrome">Chrome</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="images/screen.png" alt="" /></div></div>
+			</header>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<p class="copyright">&copy; ClockworkMod. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src='/install.js'></script>
+
+      <script>
+        $(document).ready(function() {
+					if (navigator.appVersion.indexOf("Win")!=-1) $('#windows').addClass('special');
+					else if (navigator.appVersion.indexOf("Mac")!=-1) $('#mac').addClass('special');
+					else if (navigator.appVersion.indexOf("Linux")!=-1) $('#linux').addClass('special');
+					else $('#chrome').addClass('special');
+				})
+      </script>
+	</body>
+</html>
