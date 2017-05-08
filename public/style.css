@@ -1,0 +1,52 @@
+.wrapper.style2 .image {
+  box-shadow : none
+}
+.spotlight .image {
+  box-shadow : none
+}
+.blue-icon {
+  color: #4A98E5;
+}
+table tbody tr:nth-child(2n + 1) {
+    background-color: transparent;
+}
+table tbody td:nth-child(3) {
+    background-color: rgba(144, 144, 144, 0.075);
+}
+table tbody th:nth-child(3) {
+    background-color: rgba(144, 144, 144, 0.075);
+}
+table tbody td:nth-child(2), table tbody td:nth-child(3), table thead tr th:nth-child(2), table thead tr th:nth-child(3) {
+  text-align: center;
+}
+
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse {
+  background-color: #4696e5;
+  border-color: #4696e5;
+}
+
+.navbar {
+  border-radius: initial;
+  margin-bottom: 0px;
+}
+
+.navbar a {
+  border-bottom: initial;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #828282;
+}
+
+body {
+  color: #999999;
+}
