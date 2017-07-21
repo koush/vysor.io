@@ -25,20 +25,65 @@ var vysorDefaultSettings =
   "navigationBar": {
     "buttons": [
       {
-        "class": "fa fa-lg fa-chevron-left",
+        "class": "fa-chevron-left",
         "event": "KEYCODE_BACK",
         "title": "Back"
       },
       {
-        "class": "fa fa-lg fa-circle-o",
+        "class": "fa-circle-o",
         "event": "KEYCODE_HOME",
         "title": "Home"
       },
       {
-        "class": "fa fa-lg fa-navicon",
+        "class": "fa-navicon",
         "event": "KEYCODE_APP_SWITCH",
         "title": "Recent Tasks"
       }
+    ]
+  },
+  "titleBar": {
+    "buttonGroups": [
+      [
+        {
+          "class": "fa-gear",
+          "title": "Open Device Settings",
+          "event": "VYSOR_OPEN_DEVICE_SETTINGS"
+        },
+        {
+          "class": "fa-video-camera",
+          "title": "Record Screen",
+          "event": "VYSOR_RECORD_SCREEN"
+        },
+        {
+          "class": "fa-camera",
+          "title": "Take Screenshot",
+          "event": "VYSOR_SCREENSHOT"
+        }
+      ],
+      [
+        {
+          "class": "fa-volume-down",
+          "title": "Volume Down",
+          "event": "KEYCODE_VOLUME_DOWN"
+        },
+        {
+          "class": "fa-volume-up",
+          "title": "Volume Up",
+          "event": "KEYCODE_VOLUME_UP"
+        }
+      ],
+      [
+        {
+          "class": "fa-repeat",
+          "title": "Rotate Screen",
+          "event": "VYSOR_ROTATE_SCREEN"
+        },
+        {
+          "class": "fa-power-off",
+          "title": "Toggle Screen On/Off",
+          "event": "KEYCODE_POWER"
+        }
+      ]
     ]
   },
   "devices": {
@@ -49,7 +94,7 @@ var vysorDefaultSettings =
       "navigationBar": {
         "buttons": [
           {
-            "class": "fa fa-lg fa-circle-o",
+            "class": "fa-circle-o",
             "event": "KEYCODE_HOME",
             "title": "Home"
           }
