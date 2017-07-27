@@ -59,7 +59,7 @@
             setTimeout(function() {
 							var newLocation = window.location.toString().replace('/redirect/', '/app/vysor');
 							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
-							var customLocation = newLocation.replace('https', customProtocol).replace('http', customProtocol);
+							var customLocation = newLocation.replace(/^https/, customProtocol).replace(/^http/, customProtocol);
 							protocolCheck(customLocation, function() {
 								if (navigator.userAgent.indexOf('Chrome') == -1)
 	                window.location = window.location.toString().replace('/redirect/', '/view/');

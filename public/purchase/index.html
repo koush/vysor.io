@@ -52,7 +52,7 @@
             setTimeout(function() {
               var newLocation = window.location.toString().replace('/purchase/', '/purchase-complete/');
 							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
-							var customLocation = newLocation.replace('https', customProtocol).replace('http', customProtocol);
+							var customLocation = newLocation.replace(/^https/, customProtocol).replace(/^http/, customProtocol);
 							protocolCheck(customLocation, function() {
 								window.location = newLocation;
 							})
