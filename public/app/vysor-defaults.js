@@ -23,6 +23,7 @@ var vysorDefaultSettings =
     }
   },
   "navigationBar": {
+    "style": "background-color: #4696e5",
     "buttons": [
       {
         "class": "fa-chevron-left",
@@ -42,6 +43,7 @@ var vysorDefaultSettings =
     ]
   },
   "titleBar": {
+    "style": "background-color: #4696e5",
     "buttonGroups": [
       [
         {
