@@ -210,7 +210,13 @@
                       3Mbit
                     </option>
                     <option>
-                      4Mbit (slow, high quality)
+                      4Mbit
+                    </option>
+                    <option>
+                      6Mbit
+                    </option>
+                    <option>
+                      8Mbit (slow, high quality)
                     </option>
                   </select>
 
@@ -231,6 +237,14 @@
                     <option>Hardware</option>
                     <option>Hardware with fallback</option>
                   </select>
+
+                  <br/>
+                  <label>Defaults</label>
+                  <div>
+                    <button type="button" class="btn btn-default" id='low-quality-defaults'>Low</button>
+                    <button type="button" class="btn btn-default" id='medium-quality-defaults'>Medium</button>
+                    <button type="button" class="btn btn-default" id='high-quality-defaults'>High</button>
+                  </div>
                 </div>
               </div>
 
@@ -293,7 +307,6 @@
       </span>
     </div>
 
-    <canvas id='mirror'></canvas>
     <div id='listener'></div>
     <div class='overlay' id='dead'>
       <img src='dead-mac.png' alt='dead'>
