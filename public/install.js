@@ -9,5 +9,5 @@ function tryInlineInstall() {
   fallbackInstall, fallbackInstall)
 }
 function openDownload(ret) {
-  window.location = '/download?return=' + encodeURIComponent(window.location.toString())
+  window.location = '/download?return=' + (ret ? ret : encodeURIComponent(window.location.toString()));
 }

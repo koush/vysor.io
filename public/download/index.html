@@ -35,10 +35,17 @@
 			var dl = 'https://vysornuts.clockworkmod.com/download/' + platform;
 			if (back && back.length) {
 				// sanitize
-				var url = new URL(decodeURIComponent(back));
-				url = new URL(url.pathname + url.search, window.location.origin);
-				window.location = back;
-				window.open(dl);
+				back = decodeURIComponent(back);
+				if (back == 'vysordev') {
+					window.location = 'https://vysordev.clockworkmod.com/#two';
+					window.open(dl);
+				}
+				else {
+					var url = new URL(decodeURIComponent(back));
+					url = new URL(url.pathname + url.search, window.location.origin);
+					window.location = back;
+					window.open(dl);
+				}
 			}
 
 			window.location = window.location.origin;
