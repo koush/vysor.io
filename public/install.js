@@ -8,6 +8,9 @@ function tryInlineInstall() {
   chrome.webstore.install('https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm',
   fallbackInstall, fallbackInstall)
 }
-function openDownload() {
-  window.location = '/download?return=' + encodeURIComponent(window.location.toString())
+function openDownload(ret) {
+  if (ret)
+    window.location = '/download?return=' + ret
+  else
+    window.location = '/download'
 }
