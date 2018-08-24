@@ -34,21 +34,11 @@
 			var back = getUrlVars()['return']
 			var dl = 'https://vysornuts.clockworkmod.com/download/' + platform;
 			if (back && back.length) {
-				if (back == 'vysordev') {
-					window.location = 'https://vysordev.clockworkmod.com/#two';
-					window.open(dl);
-					return;
-				}
-				else if (back == 'server') {
-					window.location = 'https://vysor.io/server/';
-					window.open(dl);
-					return;
-				}
-				else if (back == 'view') {
-					window.location = 'https://vysor.io/view/';
-					window.open(dl);
-					return;
-				}
+				// sanitize
+				var url = new URL(back);
+				url = new URL(back.pathname + back.search, window.location.origin);
+				window.location = back;
+				window.open(dl);
 			}
 
 			window.location = window.location.origin;
