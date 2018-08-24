@@ -35,7 +35,7 @@
 			var dl = 'https://vysornuts.clockworkmod.com/download/' + platform;
 			if (back && back.length) {
 				// sanitize
-				var url = new URL(back);
+				var url = new URL(decodeURIComponent(back));
 				url = new URL(back.pathname + back.search, window.location.origin);
 				window.location = back;
 				window.open(dl);
