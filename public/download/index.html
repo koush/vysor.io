@@ -43,7 +43,7 @@
 				else {
 					var url = new URL(decodeURIComponent(back));
 					url = new URL(url.pathname + url.search, window.location.origin);
-					window.location = back;
+					window.location = url.toString();
 					window.open(dl);
 				}
 				return;
