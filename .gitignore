@@ -7,3 +7,4 @@ public/app/video_decode/Makefile
 public/app/video_decode/pnacl/Release/dir.stamp
 h264
 node_modules
+public/app/assets/
