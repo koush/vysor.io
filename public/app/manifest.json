@@ -67,6 +67,10 @@
   },
   "nacl_modules": [
     {
+      "path": "native/audio_playback.nmf",
+      "mime_type": "application/x-ppapi-vysor-audio"
+    },
+    {
       "path": "native/video_decode.nmf",
       "mime_type": "application/x-ppapi-vysor"
     }

@@ -1,0 +1,12 @@
+{
+  "program": {
+    "portable": {
+      "pnacl-translate": {
+        "url": "audio_playback.pexe"
+      },
+      "pnacl-debug": {
+        "url": "audio_playback_unstripped.bc"
+      }
+    }
+  }
+}

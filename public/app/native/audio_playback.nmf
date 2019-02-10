@@ -1,0 +1,14 @@
+{
+  "files": {},
+  "program": {
+    "darwin": {
+      "url": "darwin/audio_playback.so"
+    },
+    "win32": {
+      "url": "win32/audio_playback.dll"
+    },
+    "linux": {
+      "url": "linux/audio_playback.so"
+    }
+  }
+}
