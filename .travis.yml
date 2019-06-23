@@ -23,15 +23,5 @@ branches:
     - # Do not build tags that we create when we upload to GitHub Releases
     - /^(?i:continuous)$/
 
-deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file:
-    - ./electron-chrome/build/dist/Vysor*.AppImage
-    - ./electron-chrome/build/dist/Vysor*.snap
-  skip_cleanup: true
-  on:
-    tags: true
-
 notifications:
   email: false
