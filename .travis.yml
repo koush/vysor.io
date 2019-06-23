@@ -1,0 +1,36 @@
+sudo: required
+
+language: node_js
+
+before_install:
+  - source ci_scripts/travis_functions.sh
+
+install:
+  - travis_install
+
+script:
+  - travis_script
+
+after_success:
+  - ls ./electron-chrome/build
+  - ls ./electron-chrome/build/dist
+  - travis_after_success
+
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)$/
+
+deploy:
+  provider: releases
+  api_key:
+    - secure: "IqqlXDFHMJNYBjkxaJgFLg2yvu33ridAlCVWnlg/ZXt3Hd5pcXG2zxrIA6I5n3dvi1OXzLpQ74MlRGuA5xEZ4HcrHK88LpQrZPb7i8CmFKKqH6l8y2MqZaQDbaH4eacLlA6GjMMywufMOK6Z1SEf3FDDN3CylIWhHJaokfFk2Ff7jxnPTaWsKGYaEQ8dYdEagyTFsxfpysI6bsetkQLLfatewxwe1JxErvCUtLbcZZoml8K+T/PahCuiwV5LbmRXJxj3GHMzxOKR/JRJnyFErlUVs6/65iWsbG462Kff35H9LKByVksTi2I2pQPsQJ/81ay4xdfOxX6nIHxK7t1ZukkBqS5UEASvs+g+G7W/jtDohJFYtU5W2Z5n9vnvYkHwRegEVmrTmQMzNoVFRnTFHI05WhTsxWupN98mn6WnwE9y3g6Suzx7VI6CgzVVC2Tb5D06KLNHR3Sf3oO/mvB3DU/5NyIqZT+sbzRm/LFwiYSSWGvgMmY207WregRoGmg/iCVc7lGm/P1l/J92bwr+LWjkGYwLFQy27/6zBP/sUI8zvTsuan/pGbg2D6S6v1Z74wVOgRCSLsJ2/Th5d6ntWVUr55IRHs+ovFFtjZtHXskKzsjSxTN1Q+ra1D1w7bW9Uf5q1A88TJOchY79SPytitFZNlZtwgwW2cYyKK8EwWo=" 
+  file:
+    - ./electron-chrome/build/dist/Vysor*.AppImage
+    - ./electron-chrome/build/dist/Vysor*.snap
+  skip_cleanup: true
+  on:
+    tags: true
+
+notifications:
+  email: false
