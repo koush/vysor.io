@@ -30,8 +30,9 @@ travis_script() {
   (
     cd electron-chrome
     npm run package-linux -- --app-dir=../public/app/
-    ./node_modules/.bin/electron-builder --project build/ --linux snap AppImage
+    ./node_modules/.bin/electron-builder --project build/ --linux snap AppImage --publish never
 
+    cd ./build/dist/
     # Replace spaces with underscores in filename
     mv Vysor*.AppImage $(echo Vysor*.AppImage | tr ' ' '_')
   )
