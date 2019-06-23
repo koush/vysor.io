@@ -25,8 +25,7 @@ branches:
 
 deploy:
   provider: releases
-  api_key:
-    - secure: "xQdKRV5CYkeWFmU8ncBqL4upzqmyEruk+XoupG56aM0lZtnuxCc5LEUAaEr8nsMzbjkBqp1TYS0ntE67FEE3f6GkVgqaJbkZsFKpfmojtH6byq+7pjhzLdXiLCS2XnY3Q5vABs3JDnAT1p+EiVXquNrbgrm9g9JhvLST1vWGRRnNbp6hOzBDEbozOFUVEBvRCb4o9R56NJ1OfPrexy9VVf+Shw7HcQ+NNgQS9eyERqy4tsSdsjs2i8lRO8LpGsOUL4t2QUgYWvymli566ZUngLcL5jpZ/OLGQ7DNaYzweElKv/FE3wVUFHohV5Uin86THZdA48JaqSNSjIf4qCWIo7H0oWdUrdSFWPl2kLSUwV1dVWHxiSV2dTuGm5uoFPwSjgX2fGa3Kqewfx/iM4TzsHMH6QU0gGphBk0JOu1NeROnvBjLpSPiuXDLlEYOR4QlHHzZZiqLrS0V3vqzGomNoUnGPolaQfXn1csAFyeY8QwN2hBIB34IbrPBZA0WJFCf4B1pS5MNGigWqEuIWGa653Q9N9dj9iioQUnHAJUOc58OWflyQF9dqzK4CxjhsOi0qbOXGYUDEor+NYYSfXDR7wdir1TL+NX4h/TITtLxLjmm7KpkTWXfVmASaumdrfj6kN85cAyAx5Bv66CDWZZ8Ija199rsJfruJbwt1Yd/tbs="
+  api_key: $GITHUB_TOKEN
   file:
     - ./electron-chrome/build/dist/Vysor*.AppImage
     - ./electron-chrome/build/dist/Vysor*.snap
