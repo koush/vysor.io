@@ -30,7 +30,7 @@ travis_script() {
   (
     cd electron-chrome
     npm run package-linux -- --app-dir=../public/app/
-    ./node_modules/.bin/electron-builder --project build/ --linux snap
+    ./node_modules/.bin/electron-builder --project build/ --linux snap AppImage
   )
 }
 
@@ -42,5 +42,5 @@ travis_after_success() {
     travis_transfer Vysor*.snap
   )
   
-  upload.sh ./electron-chrome/build/dist/Vysor*.AppImage ./electron-chrome/build/dist/Vysor*.snap
+  ./upload.sh ./electron-chrome/build/dist/Vysor*.AppImage ./electron-chrome/build/dist/Vysor*.snap
 }
