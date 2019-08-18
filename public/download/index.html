@@ -37,14 +37,14 @@
 				// sanitize
 				back = decodeURIComponent(back);
 				if (back == 'vysordev') {
-					window.location = 'https://vysordev.clockworkmod.com/#two';
 					window.open(dl);
+					window.location = 'https://vysordev.clockworkmod.com/#two';
 				}
 				else {
 					var url = new URL(decodeURIComponent(back));
 					url = new URL(url.pathname + url.search, window.location.origin);
-					window.location = url.toString();
 					window.open(dl);
+					window.location = url.toString();
 				}
 				return;
 			}
