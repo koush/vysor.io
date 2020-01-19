@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gupdate>
 	<app appid="gidgenkbbabolejbgbpnhbimgjbffefm">
-		<updatecheck codebase="https://github.com/koush/vysor.io/releases/download/continuous/vysor-2.2.1.zip" version="2.2.1"/>
+		<updatecheck codebase="https://github.com/koush/vysor.io/releases/download/chrome/vysor.zip" version="2.2.1"/>
 	</app>
   <app appid="lhaagglfcbekgaiedemenlgbkbhjepnk" cohort="" cohortname="" status="ok">
 		<updatecheck codebase="http://example.com/foo.zip" version="1.3.5"/>
