@@ -2,5 +2,6 @@
   "autoUpdater": {
     "nutsFeedBaseUrl": "https://vysornuts.clockworkmod.com/"
   },
-  "runtimeId": "lhaagglfcbekgaiedemenlgbkbhjepnk"
+  "runtimeId": "lhaagglfcbekgaiedemenlgbkbhjepnk",
+  "updateUrl": "http://koush.github.io/vysor.io/chrome-update.xml"
 }
