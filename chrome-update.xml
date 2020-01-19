@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gupdate>
+	<app appid="gidgenkbbabolejbgbpnhbimgjbffefm">
+		<updatecheck codebase="" version="2.1.9"/>
+	</app>
+  <app appid="lhaagglfcbekgaiedemenlgbkbhjepnk" cohort="" cohortname="" status="ok">
+		<updatecheck codebase="" version="1.3.5"/>
+	</app>
+</gupdate>
