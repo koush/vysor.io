@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gupdate>
 	<app appid="gidgenkbbabolejbgbpnhbimgjbffefm">
-		<updatecheck codebase="https://github.com/koush/vysor.io/releases/download/chrome-2.2.1/vysor.zip" version="2.2.1"/>
+		<updatecheck codebase="https://github.com/koush/vysor.io/releases/download/v2.2.3/vysor.zip" version="2.2.3"/>
 	</app>
   <app appid="lhaagglfcbekgaiedemenlgbkbhjepnk" cohort="" cohortname="" status="ok">
 		<updatecheck codebase="https://github.com/koush/vysor.io/releases/download/chrome-2.2.1/chrome-runtime.zip" version="1.3.5"/>
