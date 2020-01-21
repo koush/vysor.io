@@ -16,6 +16,8 @@ var vysorDefaultSettings =
     "Escape": "KEYCODE_BACK",
     "F1": "KEYCODE_MENU",
     "F2": "VYSOR_SHOW_TITLE_BAR",
+    "F3": "VYSOR_ENTER_FULLSCREEN",
+    "F4": "VYSOR_EXIT_FULLSCREEN",
     "Home": "KEYCODE_HOME",
     "Tab": {
       "keyevent": "KEYCODE_TAB",
