@@ -60,7 +60,7 @@ app.post('/gist', function(req, res) {
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.get('/manual', function(req, res) {
-  res.redirect('https://plus.google.com/110558071969009568835/posts/8Ka2hG5acNu');
+  res.redirect('https://github.com/koush/vysor.io/wiki');
 })
 
 //
