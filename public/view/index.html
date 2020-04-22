@@ -61,10 +61,7 @@
 							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
 							var customLocation = newLocation.replace(/^https/, customProtocol).replace(/^http/, customProtocol);
 							protocolCheck(customLocation, function() {
-								if (navigator.userAgent.indexOf('Chrome') == -1)
-	                window.location = window.location.toString().replace('/redirect/', '/view/');
-	              else
-									window.location = newLocation;
+								window.location = 'https://home.koushikdutta.com/#/deeplink/' + encodeURIComponent(window.location.href);
 							})
 
               // still here? vysor is installed!
