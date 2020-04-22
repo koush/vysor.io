@@ -190,7 +190,7 @@
 
             if (browser.isFirefox) {
                 openUriUsingFirefox(uri, failCallback, successCallback);
-            } else if (browser.isChrome) {
+            } else if (browser.isChrome || browser.isSafari) {
                 openUriWithTimeoutHack(uri, failCallback, successCallback);
             } else if (browser.isIE) {
                 openUriUsingIEInOlderWindows(uri, failCallback, successCallback);
