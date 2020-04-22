@@ -4,14 +4,14 @@
         if (target.addEventListener) {
             target.addEventListener(eventType, cb);
             return {
-                remove: function () {
+                remove: function() {
                     target.removeEventListener(eventType, cb);
                 }
             };
         } else {
             target.attachEvent(eventType, cb);
             return {
-                remove: function () {
+                remove: function() {
                     target.detachEvent(eventType, cb);
                 }
             };
@@ -30,7 +30,7 @@
 
     function openUriWithHiddenFrame(uri, failCb, successCb) {
 
-        var timeout = setTimeout(function () {
+        var timeout = setTimeout(function() {
             failCb();
             handler.remove();
         }, 1000);
@@ -53,7 +53,7 @@
 
     function openUriWithTimeoutHack(uri, failCb, successCb) {
 
-        var timeout = setTimeout(function () {
+        var timeout = setTimeout(function() {
             failCb();
             handler.remove();
         }, 1000);
@@ -104,7 +104,7 @@
 
     function openUriUsingIE10InWindows7(uri, failCb, successCb) {
         var timeout = setTimeout(failCb, 1000);
-        window.addEventListener("blur", function () {
+        window.addEventListener("blur", function() {
             clearTimeout(timeout);
             successCb();
         });
@@ -126,7 +126,7 @@
 
         myWindow.document.write("<iframe src='" + uri + "'></iframe>");
 
-        setTimeout(function () {
+        setTimeout(function() {
             try {
                 myWindow.location.href;
                 myWindow.setTimeout("window.close()", 1000);
@@ -148,11 +148,11 @@
     function checkBrowser() {
         var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
         return {
-            isOpera   : isOpera,
-            isFirefox : typeof InstallTrigger !== 'undefined',
-            isSafari  : Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0,
-            isChrome  : !!window.chrome && !isOpera,
-            isIE      : /*@cc_on!@*/false || !!document.documentMode // At least IE6
+            isOpera: isOpera,
+            isFirefox: typeof InstallTrigger !== 'undefined',
+            isSafari: Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0,
+            isChrome: !!window.chrome && !isOpera,
+            isIE: /*@cc_on!@*/false || !!document.documentMode // At least IE6
         }
     }
 
@@ -199,4 +199,4 @@
             }
         }
     }
-} (window));
+}(window));
