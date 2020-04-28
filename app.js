@@ -36,6 +36,13 @@ app.use('/redirects', express.static(path.join(__dirname, 'public')));
 app.use('/app/vysor', express.static(path.join(__dirname, 'public/app/screen.html')));
 app.use('/app/browser', express.static(path.join(__dirname, 'public/app/screen.html')));
 
+app.options('/gist', function(req, res) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.writeHead(200);
+  res.end();
+});
 
 app.post('/gist', function(req, res) {
   res.header('Access-Control-Allow-Origin', '*');
