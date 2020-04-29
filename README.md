@@ -4,7 +4,7 @@
 
 Despite being the third version, this is the first real major revision of Vysor. There are innumerable fixes, improvements, and I'm sure bugs. Please report them in the issue tracker.
 
-1. Both native and browser apps have been completely rewritten to support installation as a progressive web app. Vysor is available in any browser that supports WebUSB.
+1. Both native and Chrome apps (which were killed) have been completely rewritten to support installation as a progressive web app. Vysor is available in any browser that supports WebUSB.
 2. There's a new video decoder that uses WebAssembly. This is a reliable alternative to the native NaCL and PNaCL decoders that are also available. It can be found in device settings. May resolve black screen issues for some users.
 3. Detect usage of the h264 main profile and suggest an automatic fix (another black screen issue).
 4. The UI has been overhauled.
