@@ -1,6 +1,6 @@
 ## Change Log
 
-v3.0.x - Vysor in the browser ([app.vysor.io](https://app.vysor.io))
+### v3.0.x - Vysor in the browser ([app.vysor.io](https://app.vysor.io))
 
 Despite being the third version, this is the first real major revision of Vysor. There are innumerable fixes, improvements, and I'm sure bugs. Please report them in the issue tracker.
 
