@@ -33,7 +33,9 @@ If applicable, add screenshots to help explain your problem.
  - Vysor Bug Report Link:
 
 **Vysor Bug Report**
-To retrieve a bug report, in the desktop application, click the bug report button to generate the report. Please note that this will contain your email address. This is necessary for diagnosing licensing/purchase issues.
+1. First, trigger the bug.
+2. **Leave the window with the bug open.** Do not close it, or the bug data will be lost.
+3. To generate a bug report, open the main device window if it is not open already. Click the Bug Report button along the bottom. Please note that this will contain your email address. This is necessary for diagnosing licensing/purchase issues.
 
 **Android Logcat**
 If you are familiar with adb logcat, please include the log output of any crashes to this issue.
