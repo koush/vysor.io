@@ -1,3 +1,11 @@
+# Vysor - Mirror and Control your Android
+
+# Downloads:
+ * [Windows](http://vysornuts.clockworkmod.com/download/win)
+ * [Mac](http://vysornuts.clockworkmod.com/download/mac)
+ * [Linux](https://github.com/koush/vysor.io/releases)
+ * [ChromeOS, Browser, Progressive Web App](https://app.vysor.io)
+
 ## Change Log
 
 ### v3.0.x - Vysor in the browser ([app.vysor.io](https://app.vysor.io))
