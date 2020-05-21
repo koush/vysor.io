@@ -30,7 +30,7 @@ If applicable, add screenshots to help explain your problem.
 **Android (please complete the following information):**
  - Device: [e.g. Pixel 4]
  - OS: [e.g. Android 10]
- - Vysor Bug Report Link:
+ - Vysor Bug Report Link (**required**):
 
 **Generate a Vysor Bug Report**
 1. First, trigger the bug.
