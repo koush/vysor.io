@@ -6,6 +6,9 @@
  * [Mac](http://vysornuts.clockworkmod.com/download/mac)
  * [Linux](https://github.com/koush/vysor.io/releases)
  * [ChromeOS, Browser, Progressive Web App](https://app.vysor.io)
+ * Android APK
+   * [Google Play](https://play.google.com/store/apps/details?id=com.koushikdutta.vysor&hl=en_US)
+   * [Direct Download](https://app.vysor.io/Vysor-release.apk)
 
 ![EW9fcJ_UMAEwd03](https://user-images.githubusercontent.com/73924/82156614-00a73900-9831-11ea-9028-caa4e0ef5bf1.jpeg)
 
