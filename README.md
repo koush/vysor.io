@@ -14,6 +14,10 @@
 
 ## Change Log
 
+### v3.1.x - Vysor Audio Mirroring
+
+This update adds support for [Android 10's built in Audio Mirroring](https://github.com/koush/vysor.io/issues/582#issuecomment-673289617). Vysor no longer requires Chromecast emulation to mirror audio.
+
 ### v3.0.x - Vysor in the browser ([app.vysor.io](https://app.vysor.io))
 
 Despite being the third version, this is the first real major revision of Vysor. There are innumerable fixes, improvements, and I'm sure bugs. Please report them in the issue tracker.
