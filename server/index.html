@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Vysor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src='/protocolcheck.js'></script>
+		<script src='/install.js'></script>
+
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><a href="#">Vysor</a></h1>
+					<p>A window to your Android</p>
+					<h5 class='instructions'>Someone is trying to share their Android devices with you.</h5>
+					<h5 class='instructions2'>Download the Vysor Chrome app to connect.</h5>
+					<ul class="actions">
+						<li><a href="javascript:openDownload()" class="button special icon fa-download">Download Vysor</a></li>
+            <!-- <li><a href="#one" class="button icon fa-chevron-down scrolly">Learn More</a></li> -->
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="images/screen.png" alt="" /></div></div>
+			</header>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://twitter.com/vysorapp" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				</ul>
+				<p class="copyright">&copy; ClockworkMod. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+      <script>
+        $(document).ready(function() {
+          if (window.location.toString().indexOf('server') != -1) {
+            // after a second, redirect to trigger vysor
+            setTimeout(function() {
+							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
+							var customLocation = window.location.toString().replace(/^https/, customProtocol).replace(/^http/, customProtocol);
+							protocolCheck(customLocation, function() {
+								window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
+							})
+
+              // still here? vysor is installed!
+              setTimeout(function() {
+                if (window.location.search.indexOf('close=true') != -1)
+                  window.close();
+                $('.actions').hide();
+                $('.instructions').text('Connecting to shared Android devices.');
+                $('.instructions2').text('Vysor will open automatically.');
+              }, 5000);
+            }, 1000)
+          }
+        })
+      </script>
+
+	</body>
+</html>
