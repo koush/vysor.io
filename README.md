@@ -14,6 +14,10 @@
 
 ## Change Log
 
+### 3.2.x - Vysor Notification Mirroring
+
+This update adds support for mirroring Android notifications to the desktop. https://twitter.com/vysorapp/status/1304952083578150912
+
 ### v3.1.x - Vysor Audio Mirroring
 
 This update adds support for [Android 10's built in Audio Mirroring](https://github.com/koush/vysor.io/issues/582#issuecomment-673289617). Vysor no longer requires Chromecast emulation to mirror audio.
