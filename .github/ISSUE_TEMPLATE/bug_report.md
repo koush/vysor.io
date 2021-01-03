@@ -34,9 +34,9 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. MacOS]
  - Vysor Version [e.g. 2.2.2]
 
-**Android (please complete the following information):**
- - Device: [e.g. Pixel 4]
- - OS: [e.g. Android 10]
+**iOS/Android (please complete the following information):**
+ - Device: [e.g. Pixel 4 or iPhone 12 Pro]
+ - OS: [e.g. Android 10 or iOS 14.1]
  - Vysor Bug Report Link: [instructions follow, you must attach a bug report that contains the application errors and logging]
 
 **Android Logcat**

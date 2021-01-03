@@ -1,4 +1,4 @@
-# Vysor - Mirror and Control your Android
+# Vysor - Mirror and Control your Phone
 
 
 # Downloads:
@@ -13,6 +13,11 @@
 ![EW9fcJ_UMAEwd03](https://user-images.githubusercontent.com/73924/82156614-00a73900-9831-11ea-9028-caa4e0ef5bf1.jpeg)
 
 ## Change Log
+
+### 4.0.x - iOS Mirroring Support on Mac
+ * Screen Mirroring
+ * Audio Mirroring
+ * Control via Bluetooth Keyboard/Mouse emulation
 
 ### 3.2.x - Vysor Notification Mirroring
 
