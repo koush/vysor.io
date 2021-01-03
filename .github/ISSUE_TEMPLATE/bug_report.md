@@ -32,13 +32,17 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. MacOS]
- - Mac Model (if applicable)
  - Vysor Version [e.g. 2.2.2]
 
 **iOS/Android (please complete the following information):**
  - Device: [e.g. Pixel 4 or iPhone 12 Pro]
  - OS: [e.g. Android 10 or iOS 14.1]
  - Vysor Bug Report Link: [instructions follow, you must attach a bug report that contains the application errors and logging]
+
+**iOS Bluetooth Issues (if using Vysor for iOS, please include the following):**
+ - Mac/Computer Model
+ - Other devices connected with computer via Bluetooth
+ - Other devices connected with iOS via Bluetooth
 
 **Android Logcat**
 If you are familiar with adb logcat, please include the log output of any crashes to this issue.
