@@ -32,6 +32,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. MacOS]
+ - Mac Model (if applicable)
  - Vysor Version [e.g. 2.2.2]
 
 **iOS/Android (please complete the following information):**
