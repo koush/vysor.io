@@ -7,6 +7,16 @@ assignees: ''
 
 ---
 
+**Issue Title**
+If the issue is platform specific, please prefix the issue title with the platform. eg:
+```
+iOS: Something Is Wrong
+```
+or
+```
+Android: My Phone Exploded!
+```
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
