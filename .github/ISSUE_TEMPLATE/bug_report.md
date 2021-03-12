@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: 'iOS: Something Is Wrong or Android: My Phone Exploded!'
+title: '"iOS: Something Is Wrong or "Android: My Phone Exploded!"'
 labels: ''
 assignees: ''
 
