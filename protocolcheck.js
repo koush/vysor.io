@@ -150,8 +150,10 @@
         return {
             isOpera: isOpera,
             isFirefox: typeof InstallTrigger !== 'undefined',
-            isSafari: Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0,
-            isChrome: !!window.chrome && !isOpera,
+            // Safari will only contain 'Safari' but not 'Chrome'
+            isSafari: Onavigator.userAgent.search('Chrome') < 0 && navigator.userAgent.search('Safari') >= 0,
+            // Chrome and Edge will contain 'Safari' and 'Chrome'
+            isChrome: navigator.userAgent.search('Chrome') >= 0,
             isIE: /*@cc_on!@*/false || !!document.documentMode // At least IE6
         }
     }
