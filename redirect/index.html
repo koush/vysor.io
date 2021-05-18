@@ -24,10 +24,12 @@
 			<h1><a href="#">Vysor</a></h1>
 			<p>A window to your Phone</p>
 			<h5 class='instructions'>Someone is trying to share their Phone screen with you.</h5>
-			<h5 class='instructions2'>Open this link in Chrome or download the Vysor Chrome app to connect.</h5>
+			<h5 class='instructions2'>You can view their device using the Vysor desktop app, or continue in your
+				browser.</h5>
 			<ul class="actions">
-				<li><a href="javascript:openDownload()" class="button special icon fa-download">Download Vysor</a></li>
-				<!-- <li><a href="#one" class="button icon fa-chevron-down scrolly">Learn More</a></li> -->
+				<li><a href="javascript:openDownload()" class="button special icon fa-play">Launch Vysor</a></li>
+				<li><a href="javascript:openVysor()" class="button special icon fa-play-circle">Open in Browser</a></li>
+				<li><a href="javascript:openBrowser()" class="button special icon fa-download">Download Vysor</a></li>
 			</ul>
 		</div>
 		<div class="image phone">
@@ -38,9 +40,10 @@
 	<!-- Footer -->
 	<footer id="footer">
 		<ul class="icons">
-			<li><a href="https://twitter.com/vysorapp" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="https://twitter.com/vysorapp" class="icon fa-twitter"><span class="label">Twitter</span></a>
+			</li>
 		</ul>
-		<p class="copyright">&copy; ClockworkMod. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+		<p class="copyright">&copy; ClockworkMod.</p>
 	</footer>
 
 	<!-- Scripts -->
@@ -51,25 +54,17 @@
 	<script src="/assets/js/main.js"></script>
 
 	<script>
-		$(document).ready(function() {
-			if (window.location.toString().indexOf('redirect') != -1) {
-				// after a second, redirect to trigger vysor
-				setTimeout(function() {
-					var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
-					var customLocation = window.location.toString().replace(/^https/, customProtocol).replace(/^http/, customProtocol);
-					protocolCheck(customLocation, function() {
-						window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
-					})
+		function openVysor() {
+			var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
+			var customLocation = window.location.toString().replace(/^https/, customProtocol).replace(/^http/, customProtocol);
+			protocolCheck(customLocation, function () {
+				window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
+			})
+		}
 
-					// still here? vysor is installed!
-					setTimeout(function() {
-						$('.actions').hide();
-						$('.instructions').text('Connecting to a shared device.');
-						$('.instructions2').text('Vysor will open automatically.');
-					}, 5000);
-				}, 1000)
-			}
-		})
+		function openBrowser() {
+			window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
+		}
 	</script>
 
 </body>
