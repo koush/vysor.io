@@ -151,7 +151,7 @@
             isOpera: isOpera,
             isFirefox: typeof InstallTrigger !== 'undefined',
             // Safari will only contain 'Safari' but not 'Chrome'
-            isSafari: Onavigator.userAgent.search('Chrome') < 0 && navigator.userAgent.search('Safari') >= 0,
+            isSafari: navigator.userAgent.search('Chrome') < 0 && navigator.userAgent.search('Safari') >= 0,
             // Chrome and Edge will contain 'Safari' and 'Chrome'
             isChrome: navigator.userAgent.search('Chrome') >= 0,
             isIE: /*@cc_on!@*/false || !!document.documentMode // At least IE6
