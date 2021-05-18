@@ -22,10 +22,11 @@
 					<h1><a href="#">Vysor</a></h1>
 					<p>A window to your Phone</p>
 					<h5 class='instructions'>Someone is trying to share their devices with you.</h5>
-					<h5 class='instructions2'>Download the Vysor Chrome app to connect.</h5>
+					<h5 class='instructions2'>You can view their device using the Vysor desktop app, or continue in your browser.</h5>
 					<ul class="actions">
-						<li><a href="javascript:openDownload()" class="button special icon fa-download">Download Vysor</a></li>
-            <!-- <li><a href="#one" class="button icon fa-chevron-down scrolly">Learn More</a></li> -->
+						<li><a href="javascript:openDownload()" class="button special icon fa-play">Launch Vysor Desktop</a></li>
+						<li><a href="javascript:openVysor()" class="button special icon fa-play-circle">Open in Browser</a></li>
+						<li><a href="javascript:openBrowser()" class="button special icon fa-download">Download Vysor</a></li>
 					</ul>
 				</div>
 				<div class="image phone"><div class="inner"><img src="/images/screen.png" alt="" /></div></div>
@@ -47,27 +48,17 @@
 			<script src="/assets/js/main.js"></script>
 
       <script>
-        $(document).ready(function() {
-          if (window.location.toString().indexOf('server') != -1) {
-            // after a second, redirect to trigger vysor
-            setTimeout(function() {
-							var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
-							var customLocation = window.location.toString().replace(/^https/, customProtocol).replace(/^http/, customProtocol);
-							protocolCheck(customLocation, function() {
-								window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
-							})
+	      function openVysor() {
+		var customProtocol = 'ec-gidgenkbbabolejbgbpnhbimgjbffefm';
+		var customLocation = window.location.toString().replace(/^https/, customProtocol).replace(/^http/, customProtocol);
+		protocolCheck(customLocation, function() {
+			window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
+		})
+	      }
 
-              // still here? vysor is installed!
-              setTimeout(function() {
-                if (window.location.search.indexOf('close=true') != -1)
-                  window.close();
-                $('.actions').hide();
-                $('.instructions').text('Connecting to shared devices.');
-                $('.instructions2').text('Vysor will open automatically.');
-              }, 5000);
-            }, 1000)
-          }
-        })
+	      function openBrowser() {
+		window.location = 'https://app.vysor.io/#/deeplink/' + encodeURIComponent(window.location.href);
+	      }
       </script>
 
 	</body>
