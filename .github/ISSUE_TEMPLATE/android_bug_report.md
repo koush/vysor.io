@@ -1,6 +1,6 @@
 ---
 name: Android Bug report
-about: Create a report to help us improve
+about: Use this template to report bugs when mirroring Android devices.
 title: 'Android: Something Is Wrong'
 labels: ''
 assignees: ''
