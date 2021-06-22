@@ -4,7 +4,8 @@
 # Downloads:
  * [Windows](http://vysornuts.clockworkmod.com/download/win)
  * [Mac](http://vysornuts.clockworkmod.com/download/mac)
- * [Linux](https://github.com/koush/vysor.io/releases)
+ * [Linux](http://vysornuts.clockworkmod.com/download/linux)
+   * The Linux download is a deb that will not autoupdate. [Setting up the apt repository](https://www.vysor.io/download/linux) is recommended for automatic updates.
  * [ChromeOS, Browser, Progressive Web App](https://app.vysor.io)
  * Android APK
    * [Google Play](https://play.google.com/store/apps/details?id=com.koushikdutta.vysor&hl=en_US)
