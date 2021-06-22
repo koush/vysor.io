@@ -10,7 +10,7 @@
    * [Google Play](https://play.google.com/store/apps/details?id=com.koushikdutta.vysor&hl=en_US)
    * [Direct Download](https://app.vysor.io/Vysor-release.apk)
 
-![EW9fcJ_UMAEwd03](https://user-images.githubusercontent.com/73924/82156614-00a73900-9831-11ea-9028-caa4e0ef5bf1.jpeg)
+![vysor-desktop-shrunk](https://user-images.githubusercontent.com/73924/121391226-fc99fd80-c902-11eb-90bc-562fa8a49cc8.jpg)
 
 ## Change Log
 
