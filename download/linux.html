@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Vysor Downloads</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="/style.css" rel="stylesheet" type="text/css">
+		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm">
+
+		<script>
+        function copyShellScript() {
+            /* Get the text field */
+            var copyText = document.getElementById("shellScript");
+
+            /* Select the text field */
+            copyText.select(); 
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+        }
+
+		function getUrlVars()
+		{
+		    var vars = [], hash;
+		    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		    for(var i = 0; i < hashes.length; i++)
+		    {
+		        hash = hashes[i].split('=');
+		        vars.push(hash[0]);
+		        vars[hash[0]] = hash[1];
+		    }
+		    return vars;
+		}
+		function installAndClose(platform) {
+			var back = getUrlVars()['return']
+			var dl = 'https://vysornuts.clockworkmod.com/download/' + platform;
+			if (back && back.length) {
+				// sanitize
+				back = decodeURIComponent(back);
+				if (back == 'vysordev') {
+					window.open(dl);
+					window.location = 'https://vysordev.clockworkmod.com/#two';
+				}
+				else {
+					var url = new URL(decodeURIComponent(back));
+					url = new URL(url.pathname + url.search, window.location.origin);
+					window.open(dl);
+					window.location = url.toString();
+				}
+				return;
+			}
+
+			window.location = window.location.origin;
+		}
+		</script>
+	</head>
+	<body id="top">
+		<div class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/#">Vysor</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="javascript:openDownload()">Download</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="https://support.vysor.io/">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1>Install Vysor Debian Package</h1>
+					<h3>Paste this into a shell to add Vysor to your apt repositories and then install it.</h3>
+					<ul class="actions">
+                        <input type="text" readonly value="(echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee -a /etc/apt/sources.list.d/vysor.list) && sudo apt update && sudo apt install vysor" id="shellScript">
+                        <br/>
+						<li><a id='deb-repo' href="javascript:copyShellScript()" class="button icon fa-copy">Copy</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="/images/screen.png" alt="" /></div></div>
+			</header>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Vysor, Inc.</p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+			<script src='/install.js'></script>
+      <script>
+        $(document).ready(function() {
+					if (navigator.appVersion.indexOf("Win")!=-1) $('#windows').addClass('special');
+					else if (navigator.appVersion.indexOf("Mac")!=-1) $('#mac').addClass('special');
+					else if (navigator.appVersion.indexOf("Linux")!=-1) $('#linux').addClass('special');
+					else $('#chrome').addClass('special');
+				})
+      </script>
+	</body>
+</html>
