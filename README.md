@@ -10,6 +10,8 @@
  * Android APK
    * [Google Play](https://play.google.com/store/apps/details?id=com.koushikdutta.vysor&hl=en_US)
    * [Direct Download](https://app.vysor.io/Vysor-release.apk)
+ * Command Line Tool
+   * npm -g install vysor
 
 ![vysor-desktop-shrunk](https://user-images.githubusercontent.com/73924/121391226-fc99fd80-c902-11eb-90bc-562fa8a49cc8.jpg)
 
