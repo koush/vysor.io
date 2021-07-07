@@ -1,5 +1,6 @@
 # Vysor - Mirror and Control your Phone
 
+## [Discord Support](https://discord.gg/xR8DpZe7)
 
 # Downloads:
  * [Windows](http://vysornuts.clockworkmod.com/download/win)
