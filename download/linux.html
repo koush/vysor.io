@@ -85,7 +85,7 @@
 					<h1>Install Vysor Debian Package</h1>
 					<h3>Paste this into a shell to add Vysor to your apt repositories and then install it.</h3>
 					<ul class="actions">
-                        <input type="text" readonly value="(echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee -a /etc/apt/sources.list.d/vysor.list) && sudo apt update && sudo apt install vysor" id="shellScript">
+                        <input type="text" readonly value="(echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list) && sudo apt update && sudo apt install vysor" id="shellScript">
                         <br/>
 						<li><a id='deb-repo' href="javascript:copyShellScript()" class="button icon fa-copy">Copy</a></li>
 					</ul>
