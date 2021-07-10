@@ -1,7 +1,7 @@
 ---
 name: iOS Bug report
 about: Use this template to report bugs when mirroring iOS devices.
-title: 'iOS: Something Is Wrong'
+title: 'iOS: Short Description of Issue'
 labels: ''
 assignees: ''
 
