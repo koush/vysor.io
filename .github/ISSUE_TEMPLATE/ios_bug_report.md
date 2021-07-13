@@ -22,7 +22,7 @@ Steps to reproduce the behavior:
 4. See error
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+A short description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
