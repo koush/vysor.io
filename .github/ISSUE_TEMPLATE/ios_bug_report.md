@@ -7,10 +7,6 @@ assignees: ''
 
 ---
 
-
-**Describe the bug**
-A clear and concise description of what the bug is.
-
 **You must attach a Vysor Bug Report Link**
 1. First, trigger the bug.
 2. **Leave the window with the bug open.** Do not close it, or the bug data will be lost.
