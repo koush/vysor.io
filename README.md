@@ -18,7 +18,12 @@
 
 ## Change Log
 
-### 4.0.x - iOS Mirroring Support on Mac
+### 4.1.x iOS Mirroring on Windows/Linux
+ * Screen Mirroring
+ * Audio Mirroring
+ * Control via Bluetooth Keyboard/Mouse with the [Vysor Dongle](https://github.com/koush/vysor.io/wiki/Vysor-Dongle)
+
+### 4.0.x - iOS Mirroring on Mac
  * Screen Mirroring
  * Audio Mirroring
  * Control via Bluetooth Keyboard/Mouse emulation
