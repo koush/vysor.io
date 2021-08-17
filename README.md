@@ -1,7 +1,7 @@
 # Vysor - Mirror and Control your Phone
 
 ## Discord Support
-  * Invite Link: https://discord.com/invite/tz5qk3wyR2
+  * Invite Link: https://discord.gg/gYkX5G52SU
 
 # Downloads:
  * [Windows](http://vysornuts.clockworkmod.com/download/win)
