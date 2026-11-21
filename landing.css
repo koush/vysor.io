@@ -315,9 +315,9 @@ svg { display: block; }
   box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.8);
 }
 .float-chip svg { width: 15px; height: 15px; }
-.chip-ios { top: 8%; left: -22px; color: #dfe8f5; animation: floaty 6s ease-in-out infinite; }
-.chip-android { bottom: 16%; right: -18px; color: #9ee7a6; animation: floaty 6s ease-in-out infinite 1.5s; }
-.chip-live { bottom: -14px; left: 12%; color: #cfe1f6; animation: floaty 6s ease-in-out infinite 0.8s; }
+.chip-ios { top: 9%; left: 21%; color: #dfe8f5; animation: floaty 6s ease-in-out infinite; }
+.chip-android { top: 9%; right: 21%; color: #9ee7a6; animation: floaty 6s ease-in-out infinite 1.5s; }
+.chip-live { bottom: 5%; left: 43%; color: #cfe1f6; animation: floaty 6s ease-in-out infinite 0.8s; }
 .live-dot {
   width: 8px;
   height: 8px;
