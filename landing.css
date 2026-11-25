@@ -562,6 +562,7 @@ svg { display: block; }
 .price-desc { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
 .price-list {
   display: grid;
+  align-content: start;
   gap: 13px;
   padding: 24px 0;
   margin: 0;
